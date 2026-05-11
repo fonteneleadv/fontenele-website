@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* 1. Cores da Marca Fontenele */
+  --color-primary: #3482c6;
+  --color-primary-deep: #0e335e;
+  --color-primary-ink: #092242;
+  --color-primary-soft: #dbeafe;
+  --color-secondary: #bc6e3d;
+  --color-secondary-strong: #914629;
+  --color-secondary-hover: #753924;
+  --color-secondary-warm: #f8ebe1;
+  --color-secondary-soft: #fcf6f2;
+
+  /* 2. Superfícies e Textos */
+  --color-canvas: #ffffff;
+  --color-surface-soft: #f8fafc;
+  --color-surface-muted: #f1f5f9;
+  --color-ink: #020617;
+  --color-body: #334155;
+  --color-muted: #64748b;
+  --color-muted-soft: #94a3b8;
+
+  /* 3. On-Surface & Scrim */
+  --color-on-primary: #ffffff;
+  --color-on-secondary: #ffffff;
+  --color-on-dark: #ffffff;
+  --color-scrim: rgba(0, 0, 0, 0.5);
+
+  /* 4. Bordas e Semântica */
+  --color-hairline: #e2e8f0;
+  --color-hairline-soft: #f1f5f9;
+  --color-whatsapp: #16a34a;
+  --color-destructive: #dc2626;
+  --color-success: #16a34a;
+
+  /* 5. Tipografia */
+  --font-serif: "Playfair Display", "Times New Roman", Georgia, serif;
+  --font-sans: "Geist", system-ui, -apple-system, sans-serif;
+
+  /* ========================================== */
+  /* COMPATIBILIDADE SHADCN (Sem conflitar)    */
+  /* ========================================== */
+  --color-background: var(--color-canvas);
+  --color-foreground: var(--color-ink);
+  --color-border: var(--color-hairline);
+  --color-input: var(--color-hairline);
+  --color-ring: var(--color-secondary);
+
+  /* Forçando cantos retos globalmente para o shadcn */
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
+    color: var(--color-ink);
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+  }
+}
