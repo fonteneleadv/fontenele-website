@@ -17,7 +17,7 @@ export function NavDropdown({ title, items, light = false, className }) {
       <div className="absolute left-0 top-[100%] w-full h-2 bg-transparent"></div>
 
       {/* Menu Dropdown */}
-      <div className="absolute left-0 top-[calc(100%+0.5rem)] w-[280px] bg-canvas border border-hairline rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 p-2">
+      <div className="absolute right-0 top-[calc(100%+0.5rem)] w-[280px] bg-canvas border border-hairline rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 p-2">
         <ul className="flex flex-col gap-1">
           {items.map((item, index) => (
             <li key={index}>
