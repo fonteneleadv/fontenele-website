@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -21,8 +22,8 @@ export function NavDropdown({ title, items, light = false, className }) {
         <ul className="flex flex-col gap-1">
           {items.map((item, index) => (
             <li key={index}>
-              <a
-                href={item.href || "#"}
+              <Link
+                to={item.href || "#"}
                 className="flex items-center gap-3 px-3 py-2.5 rounded-md text-ink transition-colors hover:bg-secondary hover:text-white group/item"
               >
                 {/* Ícone */}
@@ -31,7 +32,7 @@ export function NavDropdown({ title, items, light = false, className }) {
                 </span>
                 {/* Texto */}
                 <span className="text-sm font-medium">{item.label}</span>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

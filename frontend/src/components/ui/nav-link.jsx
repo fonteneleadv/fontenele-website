@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 export function NavLink({ children, href = "#", isActive = false, light = false, className, ...props }) {
   return (
-    <a
-      href={href}
+    <Link
+      to={href}
       className={cn(
         "relative pb-1 text-base font-medium transition-colors",
         light ? "text-white hover:text-white/80" : "text-primary-ink hover:text-secondary",
@@ -18,6 +19,6 @@ export function NavLink({ children, href = "#", isActive = false, light = false,
       {...props}
     >
       {children}
-    </a>
+    </Link>
   );
 }
