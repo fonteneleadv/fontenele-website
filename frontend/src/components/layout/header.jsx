@@ -28,10 +28,10 @@ export function Header({ preview = false, previewScrolled = false }) {
   }, [location.pathname]);
 
   const dropdownItems = [
-    { label: "Direito Bancário", href: "#", icon: <Landmark className="size-5" /> },
-    { label: "Direito do Consumidor", href: "#", icon: <ShieldCheck className="size-5" /> },
-    { label: "Direito Público", href: "#", icon: <Users className="size-5" /> },
-    { label: "Consultoria", href: "#", icon: <Briefcase className="size-5" /> },
+    { label: "Direito Bancário", href: "/servicos/direito-bancario", icon: <Landmark className="size-5" /> },
+    { label: "Direito do Consumidor", href: "/servicos/direito-do-consumidor", icon: <ShieldCheck className="size-5" /> },
+    { label: "Direito Público", href: "/servicos/direito-publico", icon: <Users className="size-5" /> },
+    { label: "Consultoria", href: "/servicos/consultoria", icon: <Briefcase className="size-5" /> },
   ];
 
   return (
@@ -90,7 +90,7 @@ export function Header({ preview = false, previewScrolled = false }) {
           <nav className="hidden md:flex items-center gap-8">
             <NavLink href="/" isActive={currentPath === "/"} light={isScrolled}>Início</NavLink>
             <NavLink href="/sobre-nos" isActive={currentPath === "/sobre-nos"} light={isScrolled}>Sobre nós</NavLink>
-            <NavDropdown title="Serviços" items={dropdownItems} light={isScrolled} />
+            <NavDropdown title="Serviços" items={dropdownItems} light={isScrolled} isActive={currentPath.includes("/servicos")} />
             <NavLink href="/blog" isActive={currentPath === "/blog"} light={isScrolled}>Blog</NavLink>
             <NavLink href="/contato" isActive={currentPath === "/contato"} light={isScrolled}>Contato</NavLink>
           </nav>
@@ -122,7 +122,10 @@ export function Header({ preview = false, previewScrolled = false }) {
         <NavLink href="/sobre-nos" isActive={currentPath === "/sobre-nos"} light={true} onClick={() => setIsMobileMenuOpen(false)}>Sobre nós</NavLink>
         <div className="flex flex-col items-center gap-4 w-full px-8">
           <button 
-            className="flex items-center gap-2 text-white/80 uppercase tracking-widest text-xs font-semibold"
+            className={cn(
+              "flex items-center gap-2 uppercase tracking-widest text-xs font-semibold transition-colors",
+              currentPath.includes("/servicos") ? "text-secondary" : "text-white/80"
+            )}
             onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
           >
             Serviços
@@ -137,7 +140,10 @@ export function Header({ preview = false, previewScrolled = false }) {
               <Link
                 key={index}
                 to={item.href}
-                className="text-white text-lg font-medium hover:text-secondary transition-colors"
+                className={cn(
+                  "text-lg font-medium transition-colors",
+                  currentPath === item.href ? "text-secondary" : "text-white hover:text-secondary"
+                )}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}

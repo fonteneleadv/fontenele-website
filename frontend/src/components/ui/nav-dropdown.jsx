@@ -2,13 +2,18 @@ import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export function NavDropdown({ title, items, light = false, className }) {
+export function NavDropdown({ title, items, light = false, isActive = false, className }) {
   return (
     <div className={cn("relative group inline-block", className)}>
       {/* Gatilho (Trigger) */}
       <button className={cn(
-        "flex items-center gap-1.5 pb-2 text-base font-medium transition-colors",
-        light ? "text-white hover:text-white/80" : "text-ink hover:text-primary-deep"
+        "relative flex items-center gap-1.5 pb-1 text-base font-medium transition-colors",
+        light ? "text-white hover:text-white/80" : "text-primary-ink hover:text-secondary",
+        // A linha inferior animada (mesma do NavLink)
+        "after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-secondary-warm after:transition-all after:duration-300",
+        isActive 
+          ? "after:w-full" 
+          : "after:w-0 group-hover:after:w-full"
       )}>
         {title}
         <ChevronDown className="size-4 transition-transform duration-300 group-hover:-rotate-180" />
