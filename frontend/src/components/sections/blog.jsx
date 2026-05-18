@@ -1,13 +1,21 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { SectionHat } from "../ui/section-hat";
 import { ArticleCard } from "../ui/article-card";
 import { Button } from "../ui/button";
-import { mockArticles } from "@/data/articles";
+import { sanityClient } from "@/lib/sanity";
 
 export function Blog() {
-  const latestArticles = [...mockArticles]
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 3);
+  const [latestPosts, setLatestPosts] = useState([]);
+
+  useEffect(() => {
+    sanityClient
+      .fetch(`*[_type == "post"] | order(publishedAt desc)[0...3] {
+        _id, title, "slug": slug.current, publishedAt, category, mainImage
+      }`)
+      .then(setLatestPosts)
+      .catch(console.error);
+  }, []);
 
   return (
     <section className="w-full bg-white pb-20 md:pb-32 pt-10 md:pt-12">
@@ -25,21 +33,16 @@ export function Blog() {
         </div>
 
         {/* Grid de Artigos */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-16">
-          {latestArticles.map((article) => (
-            <ArticleCard
-              key={article.id}
-              image={article.image}
-              category={article.category}
-              title={article.title}
-              href={`/blog/${article.id}`}
-            />
-          ))}
-        </div>
+        {latestPosts.length > 0 && (
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-16">
+            {latestPosts.map((post) => (
+              <ArticleCard key={post._id} article={post} />
+            ))}
+          </div>
+        )}
 
         {/* Botão Inferior */}
         <div className="flex justify-center mt-10 md:mt-12 w-full">
-          {/* O asChild faz o Button renderizar como Link, transferindo os estilos */}
           <Button asChild withArrow>
             <Link to="/blog">
               Ver todos os artigos

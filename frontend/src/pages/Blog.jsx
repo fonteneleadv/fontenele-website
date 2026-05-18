@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Cta } from "@/components/sections/cta";
@@ -6,7 +6,7 @@ import { SectionHat } from "@/components/ui/section-hat";
 import { ArticleCard } from "@/components/ui/article-card";
 import { CategoryTab } from "@/components/ui/category-tab";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
-import { mockArticles } from "@/data/articles";
+import { sanityClient } from "@/lib/sanity";
 
 const categories = [
   "Todos",
@@ -18,11 +18,28 @@ const categories = [
 
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState("Todos");
+  const [posts, setPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const filteredArticles = useMemo(() => {
-    if (activeCategory === "Todos") return mockArticles;
-    return mockArticles.filter((article) => article.category === activeCategory);
-  }, [activeCategory]);
+  useEffect(() => {
+    sanityClient
+      .fetch(`*[_type == "post"] | order(publishedAt desc) {
+        _id, title, "slug": slug.current, publishedAt, category, mainImage
+      }`)
+      .then((data) => {
+        setPosts(data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setIsLoading(false);
+      });
+  }, []);
+
+  const filteredPosts = useMemo(() => {
+    if (activeCategory === "Todos") return posts;
+    return posts.filter((post) => post.category === activeCategory);
+  }, [posts, activeCategory]);
 
   return (
     <div className="min-h-screen w-full flex flex-col bg-canvas font-sans">
@@ -64,16 +81,12 @@ export default function Blog() {
 
           <section className="w-full bg-canvas pb-24 md:pb-32">
             <div className="container mx-auto px-4 md:px-8">
-              {filteredArticles.length > 0 ? (
+              {isLoading ? (
+                <p className="text-center text-muted text-base">Carregando artigos…</p>
+              ) : filteredPosts.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-                  {filteredArticles.map((article) => (
-                    <ArticleCard
-                      key={article.id}
-                      image={article.image}
-                      category={article.category}
-                      title={article.title}
-                      href={`/blog/${article.id}`}
-                    />
+                  {filteredPosts.map((post) => (
+                    <ArticleCard key={post._id} article={post} />
                   ))}
                 </div>
               ) : (

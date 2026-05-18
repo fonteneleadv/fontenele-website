@@ -37,3 +37,12 @@ frontend/.env.*.local
 
 # System files
 .DS_Store
+
+# --- Sanity Studio Ignored Files ---
+studio/node_modules/
+studio/dist/
+studio/.sanity/
+studio/logs/
+studio/*.log
+studio/.DS_Store
+studio/*.local

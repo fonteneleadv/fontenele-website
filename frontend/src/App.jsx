@@ -26,7 +26,7 @@ export default function App() {
         <Route path="/servicos/consultoria" element={<Consulting />} />
         <Route path="/contato" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:id" element={<BlogPost />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
         <Route path="/termos-de-uso" element={<TermsOfUse />} />
         <Route path="/politica-de-cookies" element={<CookiesPolicy />} />

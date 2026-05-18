@@ -1,15 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import { PortableText } from "@portabletext/react";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Cta } from "@/components/sections/cta";
 import { ArticleCard } from "@/components/ui/article-card";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
-import { mockArticles } from "@/data/articles";
+import { sanityClient, urlFor } from "@/lib/sanity";
 
 function formatDate(iso) {
+  if (!iso) return "";
   return new Date(iso).toLocaleDateString("pt-BR", {
     day: "2-digit",
     month: "long",
@@ -18,14 +20,56 @@ function formatDate(iso) {
 }
 
 export default function BlogPost() {
-  const { id } = useParams();
-  const article = mockArticles.find((a) => String(a.id) === String(id));
+  const { slug } = useParams();
+  const [post, setPost] = useState(null);
+  const [relatedPosts, setRelatedPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [id]);
+    setIsLoading(true);
 
-  if (!article) {
+    sanityClient
+      .fetch(`*[_type == "post" && slug.current == $slug][0]`, { slug })
+      .then((data) => {
+        setPost(data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setIsLoading(false);
+      });
+  }, [slug]);
+
+  useEffect(() => {
+    if (!post) {
+      setRelatedPosts([]);
+      return;
+    }
+    sanityClient
+      .fetch(
+        `*[_type == "post" && slug.current != $slug] | order(publishedAt desc)[0...3] {
+          _id, title, "slug": slug.current, publishedAt, category, mainImage
+        }`,
+        { slug: post.slug?.current ?? slug }
+      )
+      .then((data) => setRelatedPosts(data))
+      .catch(console.error);
+  }, [post, slug]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen w-full flex flex-col bg-canvas font-sans">
+        <Header />
+        <main className="flex-1 flex items-center justify-center pt-32 pb-20">
+          <p className="text-muted text-base">Carregando artigo…</p>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (!post) {
     return (
       <div className="min-h-screen w-full flex flex-col bg-canvas font-sans">
         <Header />
@@ -49,15 +93,7 @@ export default function BlogPost() {
     );
   }
 
-  const relatedArticles = mockArticles
-    .filter((a) => a.id !== article.id)
-    .sort((a, b) => {
-      const sameCategoryA = a.category === article.category ? 0 : 1;
-      const sameCategoryB = b.category === article.category ? 0 : 1;
-      if (sameCategoryA !== sameCategoryB) return sameCategoryA - sameCategoryB;
-      return new Date(b.date) - new Date(a.date);
-    })
-    .slice(0, 3);
+  const coverUrl = post.mainImage ? urlFor(post.mainImage).url() : null;
 
   return (
     <div className="min-h-screen w-full flex flex-col bg-canvas font-sans">
@@ -79,89 +115,58 @@ export default function BlogPost() {
 
               {/* Categoria */}
               <p className="text-xs font-medium uppercase tracking-wider text-secondary mb-4">
-                {article.category}
+                {post.category}
               </p>
 
               {/* Título */}
               <h1 className="font-serif text-4xl md:text-5xl lg:text-[56px] leading-[1.1] tracking-[-0.02em] text-primary-ink mb-6">
-                {article.title}
+                {post.title}
               </h1>
 
               {/* Data */}
               <p className="text-gray-500 text-sm mb-12">
-                Publicado em {formatDate(article.date)}
+                Publicado em {formatDate(post.publishedAt)}
               </p>
 
               {/* Imagem de capa */}
-              <div className="w-full overflow-hidden rounded-sm mb-12">
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  className="w-full h-auto object-cover"
-                />
+              {coverUrl && (
+                <div className="w-full overflow-hidden rounded-sm mb-12">
+                  <img
+                    src={coverUrl}
+                    alt={post.title}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              )}
+
+              {/* Corpo do texto (PortableText) */}
+              <div className="text-body text-base md:text-lg leading-relaxed space-y-6">
+                <PortableText value={post.body} />
               </div>
-
-              {/* Corpo do texto (mock) */}
-              <p className="text-body text-lg leading-relaxed mb-6">
-                A análise jurídica que apresentamos a seguir parte de um princípio simples: decisões bem fundamentadas começam por uma leitura clara do contexto. Cada caso traz nuances que exigem técnica, mas também sensibilidade para enxergar o impacto prático sobre quem busca orientação.
-              </p>
-
-              <p className="text-body text-lg leading-relaxed mb-6">
-                O cenário regulatório brasileiro avança em ritmo próprio, e acompanhar essas mudanças é parte essencial do trabalho de qualquer escritório responsável. Neste artigo, organizamos os pontos centrais para que profissionais, gestores e cidadãos possam compreender o tema sem perder rigor técnico.
-              </p>
-
-              <h2 className="font-serif text-2xl text-primary-ink mt-10 mb-4">
-                O que diz a legislação aplicável
-              </h2>
-
-              <p className="text-body text-lg leading-relaxed mb-6">
-                O conjunto normativo combina dispositivos do Código Civil, da legislação específica do setor e da jurisprudência consolidada nos tribunais superiores. Esse arranjo cria um terreno em que a interpretação literal raramente é suficiente — a análise sistêmica costuma ser determinante para preservar o direito.
-              </p>
-
-              <blockquote className="border-l-4 border-secondary pl-6 my-10 italic text-primary-ink text-xl leading-relaxed">
-                “A clareza jurídica não é um luxo técnico: é a base sobre a qual decisões responsáveis são construídas.”
-              </blockquote>
-
-              <h2 className="font-serif text-2xl text-primary-ink mt-10 mb-4">
-                Aspectos práticos para o leitor
-              </h2>
-
-              <p className="text-body text-lg leading-relaxed mb-6">
-                Na prática, identificar precocemente os pontos sensíveis — cláusulas, prazos, requisitos formais — costuma evitar litígios desnecessários e preservar o equilíbrio das relações. A orientação preventiva é, em muitos casos, mais eficiente do que a atuação contenciosa posterior.
-              </p>
-
-              <p className="text-body text-lg leading-relaxed mb-6">
-                Cada situação, contudo, precisa ser avaliada à luz dos documentos e do histórico envolvidos. Este artigo tem caráter informativo e não substitui a análise individualizada por um advogado.
-              </p>
             </article>
           </div>
         </ScrollReveal>
 
-        <ScrollReveal>
-          <div className="container mx-auto px-4 md:px-8 pb-20">
-            <div className="mx-auto max-w-3xl">
-              <hr className="mb-16 border-hairline" />
+        {relatedPosts.length > 0 && (
+          <ScrollReveal>
+            <div className="container mx-auto px-4 md:px-8 pb-20">
+              <div className="mx-auto max-w-3xl">
+                <hr className="mb-16 border-hairline" />
 
-              {/* Artigos Relacionados */}
-              <div className="flex flex-col gap-10">
-                <h2 className="font-serif text-3xl md:text-4xl text-primary-ink">
-                  Continue lendo
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {relatedArticles.map((related) => (
-                    <ArticleCard
-                      key={related.id}
-                      image={related.image}
-                      category={related.category}
-                      title={related.title}
-                      href={`/blog/${related.id}`}
-                    />
-                  ))}
+                <div className="flex flex-col gap-10">
+                  <h2 className="font-serif text-3xl md:text-4xl text-primary-ink">
+                    Continue lendo
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {relatedPosts.map((related) => (
+                      <ArticleCard key={related._id} article={related} />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </ScrollReveal>
+          </ScrollReveal>
+        )}
 
         <ScrollReveal>
           <Cta />
