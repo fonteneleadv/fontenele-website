@@ -91,7 +91,7 @@ export function Header({ preview = false, previewScrolled = false }) {
             <NavLink href="/" isActive={currentPath === "/"} light={isScrolled}>Início</NavLink>
             <NavLink href="/sobre-nos" isActive={currentPath === "/sobre-nos"} light={isScrolled}>Sobre nós</NavLink>
             <NavDropdown title="Serviços" items={dropdownItems} light={isScrolled} isActive={currentPath.includes("/servicos")} />
-            <NavLink href="/blog" isActive={currentPath === "/blog"} light={isScrolled}>Blog</NavLink>
+            <NavLink href="/blog" isActive={currentPath.includes("/blog")} light={isScrolled}>Blog</NavLink>
             <NavLink href="/contato" isActive={currentPath === "/contato"} light={isScrolled}>Contato</NavLink>
           </nav>
 
@@ -151,7 +151,7 @@ export function Header({ preview = false, previewScrolled = false }) {
             ))}
           </div>
         </div>
-        <NavLink href="/blog" isActive={currentPath === "/blog"} light={true} onClick={() => setIsMobileMenuOpen(false)}>Blog</NavLink>
+        <NavLink href="/blog" isActive={currentPath.includes("/blog")} light={true} onClick={() => setIsMobileMenuOpen(false)}>Blog</NavLink>
         <NavLink href="/contato" isActive={currentPath === "/contato"} light={true} onClick={() => setIsMobileMenuOpen(false)}>Contato</NavLink>
       </div>
     </>

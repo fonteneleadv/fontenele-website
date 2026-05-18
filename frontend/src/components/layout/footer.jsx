@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ContactLink } from "../ui/contact-link";
 import { SocialLink } from "../ui/social-link";
 import { Mail, PhoneOutgoing } from "lucide-react";
@@ -89,10 +90,32 @@ export function Footer() {
 
         </div>
 
-        {/* Base: Copyright */}
-        <p className="text-[#737373] text-sm leading-none">
-          © 2026 Fontenele Advogados
-        </p>
+        {/* Base: Copyright + Links Legais */}
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pt-8 border-t border-[#e6e6e6]">
+          <p className="text-[#737373] text-sm leading-none">
+            © 2026 Fontenele Advogados
+          </p>
+          <nav className="flex flex-wrap gap-x-6 gap-y-2">
+            <Link
+              to="/politica-de-privacidade"
+              className="text-[#737373] text-sm leading-none hover:text-secondary transition-colors"
+            >
+              Política de Privacidade
+            </Link>
+            <Link
+              to="/termos-de-uso"
+              className="text-[#737373] text-sm leading-none hover:text-secondary transition-colors"
+            >
+              Termos de Uso
+            </Link>
+            <Link
+              to="/politica-de-cookies"
+              className="text-[#737373] text-sm leading-none hover:text-secondary transition-colors"
+            >
+              Política de Cookies
+            </Link>
+          </nav>
+        </div>
 
       </div>
     </footer>

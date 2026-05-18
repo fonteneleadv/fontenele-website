@@ -7,6 +7,12 @@ import ConsumerLaw from "./pages/servicos/ConsumerLaw";
 import PublicLaw from "./pages/servicos/PublicLaw";
 import Consulting from "./pages/servicos/Consulting";
 import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse";
+import CookiesPolicy from "./pages/CookiesPolicy";
+import { CookieBanner } from "./components/ui/cookie-banner";
 
 export default function App() {
   return (
@@ -19,8 +25,14 @@ export default function App() {
         <Route path="/servicos/direito-publico" element={<PublicLaw />} />
         <Route path="/servicos/consultoria" element={<Consulting />} />
         <Route path="/contato" element={<Contact />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
+        <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
+        <Route path="/termos-de-uso" element={<TermsOfUse />} />
+        <Route path="/politica-de-cookies" element={<CookiesPolicy />} />
         <Route path="/components" element={<ComponentLibrary />} />
       </Routes>
+      <CookieBanner />
     </BrowserRouter>
   );
 }

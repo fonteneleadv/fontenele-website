@@ -6,18 +6,19 @@ import { About } from "@/components/sections/about";
 import { Faq } from "@/components/sections/faq";
 import { Blog } from "@/components/sections/blog";
 import { Cta } from "@/components/sections/cta";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 export default function Home() {
   return (
     <div className="min-h-screen w-full flex flex-col bg-canvas font-sans">
       <Header />
       <main className="flex-1">
-        <Hero />
-        <Services />
-        <About />
-        <Faq />
-        <Blog />
-        <Cta />
+        <ScrollReveal><Hero /></ScrollReveal>
+        <ScrollReveal><Services /></ScrollReveal>
+        <ScrollReveal><About /></ScrollReveal>
+        <ScrollReveal><Faq /></ScrollReveal>
+        <ScrollReveal><Blog /></ScrollReveal>
+        <ScrollReveal><Cta /></ScrollReveal>
       </main>
       <Footer />
     </div>

@@ -45,8 +45,6 @@ export function Hero() {
         <div className="relative w-full lg:w-[533px] h-[400px] lg:h-[646px] rounded-sm overflow-visible z-10 mt-12 lg:mt-0">
           {/* Main Image Container */}
           <div className="relative w-full h-full overflow-hidden rounded-[8px]">
-            {/* The mix-blend-saturation white layer from Figma */}
-            <div className="absolute inset-0 bg-white mix-blend-saturation pointer-events-none z-10" />
             <img 
               src={HeroImage} 
               alt="Martelo e balança da justiça" 

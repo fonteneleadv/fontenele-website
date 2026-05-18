@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import { Button } from "./button";
 import { cn } from "@/lib/utils";
 
 export function ArticleCard({ image, category, title, href = "#", className, ...props }) {
   return (
-    <a href={href} className={cn("group flex flex-col gap-5 cursor-pointer", className)} {...props}>
+    <Link to={href} className={cn("group flex flex-col gap-5 cursor-pointer", className)} {...props}>
       {/* Imagem com Zoom no Hover */}
       <div className="w-full aspect-[4/3] overflow-hidden rounded-sm">
         <img 
@@ -36,6 +37,6 @@ export function ArticleCard({ image, category, title, href = "#", className, ...
           Ver mais
         </Button>
       </div>
-    </a>
+    </Link>
   );
 }
