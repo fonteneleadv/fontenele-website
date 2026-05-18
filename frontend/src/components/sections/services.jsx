@@ -6,22 +6,22 @@ export function Services() {
     {
       title: "Direito Bancário",
       description: "Análise e condução de questões envolvendo contratos, instituições financeiras e relações bancárias.",
-      href: "#"
+      href: "/servicos/direito-bancario"
     },
     {
       title: "Direito do Servidor Público",
       description: "Exame e defesa de direitos funcionais, regimes estatutários e a regularidade de atos administrativos no serviço público.",
-      href: "#"
+      href: "/servicos/direito-publico"
     },
     {
       title: "Consultoria Jurídica",
       description: "Orientação estratégica para prevenção de riscos e apoio em decisões jurídicas relevantes.",
-      href: "#"
+      href: "/servicos/consultoria"
     },
     {
       title: "Direito do Consumidor",
       description: "Protegemos os direitos de clientes contra abusos de fornecedores (lojas, bancos, serviços) com base no CDC.",
-      href: "#"
+      href: "/servicos/direito-do-consumidor"
     }
   ];
 

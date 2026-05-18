@@ -9,7 +9,8 @@ export function ServiceSituations({
   bullets = [], 
   outro,
   buttonText = "Esclarecer minha situação",
-  image
+  image,
+  to = "/contato"
 }) {
   return (
     <section className="w-full bg-white py-20 md:py-32">
@@ -57,7 +58,7 @@ export function ServiceSituations({
             </p>
           )}
 
-          <Button variant="default" withArrow>
+          <Button variant="default" withArrow to={to}>
             {buttonText}
           </Button>
         </div>

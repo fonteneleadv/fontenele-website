@@ -40,7 +40,7 @@ export function About() {
             </p>
           </div>
 
-          <Button variant="default" withArrow>
+          <Button variant="default" withArrow to="/sobre-nos">
             Saiba mais
           </Button>
         </div>

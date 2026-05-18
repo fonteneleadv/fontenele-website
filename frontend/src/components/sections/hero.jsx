@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { SectionHat } from "../ui/section-hat";
 import { Button } from "../ui/button";
 import { HeroDecorator } from "../ui/hero-decorator";
@@ -27,10 +28,10 @@ export function Hero() {
             </div>
             
             <div className="flex flex-wrap items-center gap-4 mt-2">
-              <Button variant="default" withArrow>
+              <Button to="/contato" variant="default" withArrow>
                 Falar com um especialista
               </Button>
-              <Button variant="secondary" withArrow>
+              <Button to="/sobre-nos" variant="secondary" withArrow>
                 Saiba mais
               </Button>
             </div>
