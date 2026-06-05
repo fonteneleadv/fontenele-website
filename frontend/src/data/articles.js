@@ -6,7 +6,7 @@ export const mockArticles = [
   {
     id: 1,
     title: "Entendendo contratos bancários e suas implicações",
-    category: "Direito Bancário",
+    category: "Direito Administrativo",
     image: Article1,
     link: "#",
     date: "2025-02-10",
@@ -14,7 +14,7 @@ export const mockArticles = [
   {
     id: 2,
     title: "Relações de consumo e direitos do consumidor",
-    category: "Direito do Consumidor",
+    category: "Consultoria Jurídica",
     image: Article2,
     link: "#",
     date: "2025-02-18",
@@ -22,7 +22,7 @@ export const mockArticles = [
   {
     id: 3,
     title: "Estrutura jurídica aplicada ao servidor público",
-    category: "Direito Público",
+    category: "Direito Constitucional",
     image: Article3,
     link: "#",
     date: "2025-03-04",
@@ -30,7 +30,7 @@ export const mockArticles = [
   {
     id: 4,
     title: "Revisão de cláusulas abusivas em contratos de crédito",
-    category: "Direito Bancário",
+    category: "Direito Administrativo",
     image: Article1,
     link: "#",
     date: "2025-03-15",
@@ -38,7 +38,7 @@ export const mockArticles = [
   {
     id: 5,
     title: "Compras online: prazos, arrependimento e reembolso",
-    category: "Direito do Consumidor",
+    category: "Consultoria Jurídica",
     image: Article2,
     link: "#",
     date: "2025-03-22",
@@ -46,7 +46,7 @@ export const mockArticles = [
   {
     id: 6,
     title: "Concursos públicos e o controle de legalidade dos editais",
-    category: "Direito Público",
+    category: "Direito Constitucional",
     image: Article3,
     link: "#",
     date: "2025-04-02",
@@ -54,7 +54,7 @@ export const mockArticles = [
   {
     id: 7,
     title: "Consultoria preventiva: organização jurídica para empresas",
-    category: "Consultoria",
+    category: "Direito do Consumidor",
     image: Article1,
     link: "#",
     date: "2025-04-11",
@@ -62,7 +62,7 @@ export const mockArticles = [
   {
     id: 8,
     title: "Negativação indevida e o dever de indenizar",
-    category: "Direito do Consumidor",
+    category: "Consultoria Jurídica",
     image: Article2,
     link: "#",
     date: "2025-04-20",
@@ -70,7 +70,7 @@ export const mockArticles = [
   {
     id: 9,
     title: "Planejamento contratual recorrente para operações financeiras",
-    category: "Consultoria",
+    category: "Direito do Consumidor",
     image: Article3,
     link: "#",
     date: "2025-05-05",

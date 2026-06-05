@@ -14,18 +14,18 @@ export function AboutTeam() {
             <SectionHat className="mb-6">Equipe</SectionHat>
             
             <h2 className="text-3xl lg:text-[40px] leading-tight font-serif text-primary-ink mb-8">
-              A atuação do escritório é conduzida por{" "}
-              <span className="text-secondary">
-                profissionais com foco em direito público, direito bancário e direito do consumidor.
-              </span>
+              A atuação do escritório é conduzida por profissionais com foco em direito Administrativo, constitucional e do consumidor.
             </h2>
 
             <div className="space-y-6 text-zinc-500 text-lg leading-relaxed font-sans mb-10">
               <p>
-                Mesmo com estrutura enxuta, o modelo de trabalho é orientado à especialização e ao acompanhamento próximo de cada caso.
+                A Fontenele Advogados conta com uma equipe composta por mais de 15 colaboradores, formada por profissionais comprometidos com excelência, organização e atendimento estratégico.
               </p>
               <p>
-                Quando necessário, o escritório conta com apoio técnico complementar para garantir profundidade na análise e consistência na condução das demandas.
+                Nossa atuação reúne conhecimento técnico, experiência prática e atendimento humanizado, permitindo oferecer suporte jurídico eficiente e personalizado aos servidores públicos em demandas administrativas, funcionais e patrimoniais.
+              </p>
+              <p>
+                Trabalhamos de forma integrada para garantir segurança jurídica, agilidade e soluções alinhadas às necessidades de cada cliente.
               </p>
             </div>
 

@@ -6,19 +6,23 @@ export function Faq() {
   const faqs = [
     {
       question: "Como funciona o atendimento inicial?",
-      answer: "O primeiro contato tem como objetivo entender a situação apresentada e orientar de forma clara sobre possíveis caminhos."
-    },
-    {
-      question: "É necessário iniciar um processo ao entrar em contato?",
-      answer: "Não. O atendimento inicial é voltado à orientação. Qualquer decisão posterior é tomada com base na análise do caso."
+      answer: "O primeiro contato tem como objetivo entender a situação apresentada e orientar de forma clara sobre os possíveis caminhos. Não é necessário levar documentos ou ter certeza sobre o problema — basta relatar a situação."
     },
     {
       question: "Quais áreas o escritório atende?",
-      answer: "Direito Público, Direito Bancário, Direito do Servidor Público e consultoria jurídica."
+      answer: "Direito Administrativo, Direito Constitucional, Direito do Consumidor e Consultoria Jurídica, todos com ênfase na defesa do servidor público."
     },
     {
-      question: "O atendimento é apenas para servidores públicos?",
-      answer: "O escritório possui foco em servidores públicos, mas também atua em demandas relacionadas a contratos bancários e relações de consumo."
+      question: "O escritório atende servidores de qualquer esfera?",
+      answer: "Sim. Atendemos servidores públicos municipais, estaduais e federais, independentemente do cargo ou ente ao qual estão vinculados."
+    },
+    {
+      question: "É possível recuperar valores descontados indevidamente em folha?",
+      answer: "Em muitos casos sim. A análise jurídica permite identificar cobranças irregulares, contratos não autorizados ou encargos abusivos e, dependendo da situação, buscar a restituição dos valores junto à instituição responsável."
+    },
+    {
+      question: "Quanto tempo leva para resolver uma demanda?",
+      answer: "O prazo varia conforme o tipo de demanda e a esfera em que ela tramita. Durante a análise inicial, o escritório apresenta uma estimativa realista com base no cenário específico do cliente."
     }
   ];
 

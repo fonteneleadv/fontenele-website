@@ -1,117 +1,111 @@
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
-import { ServiceHero } from "@/components/sections/service-hero";
-import { ServiceDetail } from "@/components/sections/service-detail";
-import { ServiceTopics } from "@/components/sections/service-topics";
-import { ServiceSituations } from "@/components/sections/service-situations";
-import { ServiceInsights } from "@/components/sections/service-insights";
-import { Cta } from "@/components/sections/cta";
-import { ScrollReveal } from "@/components/ui/scroll-reveal";
-
-// Assets
-import heroImg from "@/assets/direitodoconsumirdorhero.png";
-import detailImg from "@/assets/atuacaoemdireito.png";
-import situationsImg from "@/assets/analisedoc.png";
+import { Header } from "../../components/layout/header";
+import { Footer } from "../../components/layout/footer";
+import { ServiceHero } from "../../components/sections/service-hero";
+import { ServiceDetail } from "../../components/sections/service-detail";
+import { ServiceTopics } from "../../components/sections/service-topics";
+import { ServiceSituations } from "../../components/sections/service-situations";
+import { ServiceInsights } from "../../components/sections/service-insights";
+import { Cta } from "../../components/sections/cta";
+import { ScrollReveal } from "../../components/ui/scroll-reveal";
+import heroImg from "../../assets/direitodoconsumirdorhero.png";
+import detailImg from "../../assets/atuacaoemdireito.png";
+import situationImg from "../../assets/analisedoc.png";
 
 export default function ConsumerLaw() {
   return (
-    <div className="min-h-screen w-full flex flex-col bg-canvas">
+    <div className="flex flex-col w-full min-h-screen">
       <Header />
-      <main className="flex-1">
 
-        {/* Seção 1: Hero */}
+      <main className="flex-1">
         <ScrollReveal>
           <ServiceHero
-            hat="Clareza jurídica para entender direitos, deveres e implicações em relações de consumo."
-            highlightTitle="Direito do Consumidor"
-            title="e análise de relações contratuais"
-            description="Atuação jurídica voltada à compreensão e condução de situações que envolvem relações de consumo, contratos e prestação de serviços."
+            hat="Atuação estratégica para identificar irregularidades, revisar contratos e garantir a restituição de direitos financeiros."
+            title={<><span className="text-secondary block">Direito do Consumidor</span> com foco em análise de contratos bancários para servidores públicos</>}
+            description="Assessoria jurídica especializada contra práticas abusivas de instituições financeiras, com foco na proteção do servidor público."
             image={heroImg}
           />
         </ScrollReveal>
 
-        {/* Seção 2: Detail */}
         <ScrollReveal>
           <ServiceDetail
             hat="Como funciona o serviço"
-            title="Atuação em Direito do Consumidor"
+            title="Atuação em Direito Bancário"
             paragraphs={[
-              "O Direito do Consumidor regula as relações entre consumidores e fornecedores de produtos ou serviços, estabelecendo regras para garantir equilíbrio, transparência e segurança nessas interações.",
-              "A atuação da Fontenele Advogados nessa área é direcionada à análise dessas relações, com foco na compreensão de contratos, práticas adotadas e possíveis implicações jurídicas envolvidas.",
-              "Muitas situações de consumo envolvem estruturas contratuais ou operacionais que não são claras à primeira vista, o que pode gerar dúvidas sobre direitos, obrigações e caminhos possíveis.",
-              "O objetivo é organizar essas informações de forma técnica, permitindo que o cliente compreenda seu cenário antes de qualquer decisão."
+              "Atuamos de forma especializada na defesa de servidores públicos em demandas envolvendo relações bancárias e financeiras, combatendo cobranças abusivas, fraudes e irregularidades praticadas por instituições financeiras.",
+              "Com ampla experiência em Direito do Consumidor Bancário, oferecemos assessoria jurídica estratégica para proteger o patrimônio, a renda e os direitos dos servidores públicos municipais, estaduais e federais, tanto na esfera administrativa quanto judicial.",
+              "Sabemos que muitos servidores públicos enfrentam situações de endividamento excessivo, contratos abusivos e fraudes que comprometem sua estabilidade financeira. Por isso, atuamos com transparência, proximidade e excelência técnica para oferecer a melhor estratégia jurídica em cada situação."
             ]}
             image={detailImg}
           />
         </ScrollReveal>
 
-        {/* Seção 3: Topics */}
         <ScrollReveal>
           <ServiceTopics
             hat="Para quem é?"
             title="Para quem essa atuação é indicada"
-            description="A atuação em Direito do Consumidor é indicada para pessoas que se encontram em relações de consumo que geram dúvidas, insegurança ou necessidade de análise jurídica."
+            description="A atuação em Direito Bancário é indicada para servidores públicos que possuem ou já tiveram relação com instituições financeiras, especialmente em situações que envolvem contratos ou decisões financeiras relevantes."
             topics={[
-              "Consumidores que possuem contratos com empresas ou prestadores de serviço",
-              "Pessoas que desejam entender melhor condições contratuais",
-              "Situações que envolvem cobranças, serviços ou produtos",
-              "Casos em que há necessidade de avaliar direitos e deveres na relação de consumo"
+              "Funcionários públicos com empréstimos ou financiamentos",
+              "Servidores que possuem contratos bancários ativos",
+              "Servidor público que busca entender melhor condições contratuais",
+              "Situações que envolvem múltiplas operações financeiras",
+              "Servidores com cartão de crédito consignado e encargos abusivos",
+              "Quem enfrenta situação de superendividamento e busca reorganização jurídica"
             ]}
           />
         </ScrollReveal>
 
-        {/* Seção 4: Situations */}
         <ScrollReveal>
           <ServiceSituations
             hat="Situações comuns"
-            title={<>Situações que podem exigir <span className="text-secondary">análise em Direito do Consumidor</span></>}
-            intro="Alguns cenários são recorrentes nas relações de consumo e podem demandar análise jurídica:"
+            title={<>Situações que podem exigir <span className="text-secondary">análise em Direito Bancário para servidores públicos</span></>}
+            intro="Alguns cenários são mais recorrentes quando se trata de relações bancárias e podem demandar análise jurídica:"
             bullets={[
-              "Dúvidas sobre contratos de serviços ou produtos",
-              "Falta de clareza nas condições contratuais",
-              "Questionamentos sobre cobranças ou valores aplicados",
-              "Problemas na prestação de serviços",
-              "Situações que envolvem desequilíbrio contratual"
+              "Empréstimos consignados abusivos",
+              "Cartão de crédito consignado",
+              "Descontos indevidos em folha de pagamento",
+              "Fraudes bancárias e empréstimos não reconhecidos",
+              "Restituição de valores cobrados indevidamente",
+              "Contratos com cláusulas abusivas que precisam ser revisadas",
+              "Danos morais ou materiais causados por condutas de instituições financeiras"
             ]}
-            outro="A análise técnica permite compreender como a relação foi estruturada e quais são as implicações jurídicas envolvidas."
-            buttonText="Esclarecer minha situação"
-            image={situationsImg}
+            outro="Nosso trabalho é pautado na análise individualizada de cada caso, buscando soluções rápidas, seguras e eficazes para minimizar prejuízos financeiros e garantir o respeito aos direitos do consumidor."
+            image={situationImg}
+            buttonText="Quero saber mais sobre a análise técnica"
           />
         </ScrollReveal>
 
-        {/* Seção 5: Insights */}
         <ScrollReveal>
           <ServiceInsights
             hat="Análise"
-            title={<>Relações de consumo e a <span className="text-secondary">importância da análise jurídica</span></>}
+            title={<>Direito do Consumidor como <span className="text-secondary">ferramenta de equilíbrio</span></>}
             paragraphs={[
-              "As relações de consumo estão presentes em diversas áreas do dia a dia e são reguladas por normas específicas que buscam garantir equilíbrio entre as partes envolvidas.",
-              "No entanto, muitos contratos e serviços apresentam condições que exigem leitura técnica para plena compreensão."
+              "Grande parte dos desentendimentos em relações de consumo poderia ser evitada ou reduzida com uma análise prévia e o conhecimento adequado dos direitos previstos no CDC.",
+              "A atuação jurídica atua exatamente na readequação desse equilíbrio, protegendo a parte vulnerável da relação."
             ]}
-            alertText="Com o aumento da complexidade das relações de consumo, compreender esses elementos se torna fundamental para decisões mais seguras e bem estruturadas."
             listData={{
-              title: "A análise jurídica permite:",
+              title: "Ao analisar um cenário com antecedência, é possível:",
               items: [
-                "entender as condições estabelecidas em contratos",
-                "identificar possíveis inconsistências ou dúvidas",
-                "avaliar a relação entre consumidor e fornecedor",
-                "organizar informações para tomada de decisão"
+                "compreender as cláusulas e implicações dos contratos de consumo",
+                "identificar práticas abusivas ou ilegais por parte de fornecedores",
+                "organizar informações e provas relevantes para a defesa de direitos",
+                "estruturar caminhos mais seguros para a resolução de conflitos"
               ]
             }}
+            alertText="Com o aumento da complexidade das relações de consumo e serviços digitais, a orientação especializada se torna fundamental para decisões mais conscientes."
           />
         </ScrollReveal>
 
-        {/* Seção 6: CTA */}
         <ScrollReveal>
           <Cta
             hat="Fale com a equipe"
-            title="Precisa entender melhor uma relação de consumo?"
-            description="Se você possui dúvidas sobre contratos, serviços ou cobranças, uma análise jurídica pode ajudar a trazer mais clareza sobre a sua situação."
+            title="Identificou alguma irregularidade em seus contratos ou descontos?"
+            description="Se você é servidor público e suspeita de cobranças indevidas, descontos não autorizados ou práticas abusivas por parte de instituições financeiras, uma análise jurídica especializada pode indicar o caminho mais adequado para a sua situação."
             buttonText="Falar com um especialista"
           />
         </ScrollReveal>
-
       </main>
+
       <Footer />
     </div>
   );

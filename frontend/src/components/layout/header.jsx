@@ -28,10 +28,10 @@ export function Header({ preview = false, previewScrolled = false }) {
   }, [location.pathname]);
 
   const dropdownItems = [
-    { label: "Direito Bancário", href: "/servicos/direito-bancario", icon: <Landmark className="size-5" /> },
+    { label: "Direito Administrativo", href: "/servicos/direito-administrativo", icon: <Landmark className="size-5" /> },
     { label: "Direito do Consumidor", href: "/servicos/direito-do-consumidor", icon: <ShieldCheck className="size-5" /> },
-    { label: "Direito Público", href: "/servicos/direito-publico", icon: <Users className="size-5" /> },
-    { label: "Consultoria", href: "/servicos/consultoria", icon: <Briefcase className="size-5" /> },
+    { label: "Direito Constitucional", href: "/servicos/direito-constitucional", icon: <Users className="size-5" /> },
+    { label: "Consultoria Jurídica", href: "/servicos/consultoria", icon: <Briefcase className="size-5" /> },
   ];
 
   return (

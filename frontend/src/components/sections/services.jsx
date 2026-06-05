@@ -4,24 +4,24 @@ import { ServiceCard } from "../ui/service-card";
 export function Services() {
   const servicesData = [
     {
-      title: "Direito Bancário",
-      description: "Análise e condução de questões envolvendo contratos, instituições financeiras e relações bancárias.",
-      href: "/servicos/direito-bancario"
+      title: "Direito Administrativo",
+      description: "Suporte jurídico em processos administrativos, progressões funcionais, gratificações, aposentadorias e concursos públicos.",
+      href: "/servicos/direito-administrativo"
     },
     {
-      title: "Direito do Servidor Público",
-      description: "Exame e defesa de direitos funcionais, regimes estatutários e a regularidade de atos administrativos no serviço público.",
-      href: "/servicos/direito-publico"
-    },
-    {
-      title: "Consultoria Jurídica",
-      description: "Orientação estratégica para prevenção de riscos e apoio em decisões jurídicas relevantes.",
-      href: "/servicos/consultoria"
+      title: "Direito Constitucional",
+      description: "Atuação na defesa de direitos fundamentais, estabilidade, acesso a cargos públicos, legalidade administrativa e garantias previstas na Constituição Federal.",
+      href: "/servicos/direito-constitucional"
     },
     {
       title: "Direito do Consumidor",
-      description: "Protegemos os direitos de clientes contra abusos de fornecedores (lojas, bancos, serviços) com base no CDC.",
+      description: "Suporte jurídico a servidores públicos em casos de cobranças indevidas, problemas bancários, contratos abusivos, planos de saúde e falhas na prestação de serviços.",
       href: "/servicos/direito-do-consumidor"
+    },
+    {
+      title: "Consultoria Jurídica",
+      description: "Orientação preventiva e estratégica em questões funcionais, administrativas e patrimoniais.",
+      href: "/servicos/consultoria"
     }
   ];
 

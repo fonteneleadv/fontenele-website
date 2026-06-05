@@ -14,7 +14,7 @@ export function AboutLawyer() {
         {/* Coluna da Direita (Texto) - Respeita o Grid da Página */}
         <div className="flex flex-col items-start w-full lg:max-w-xl z-10 py-16 md:py-24 lg:py-32 pl-0 lg:pl-16">
           <SectionHat className="mb-6 lowercase first-letter:uppercase">
-            Advogado | Atuação em direito público e relações bancárias
+            Advogado | Atuação em Direito Administrativo, Constitucional e do Consumidor
           </SectionHat>
           
           <h2 className="font-serif text-4xl md:text-5xl lg:text-[56px] leading-[1.1] tracking-[-0.02em] text-secondary mb-8">
@@ -23,16 +23,16 @@ export function AboutLawyer() {
           
           <div className="flex flex-col gap-5 text-body text-base md:text-lg leading-relaxed">
             <p>
-              Davi Fontenele é advogado com atuação direcionada à análise de contratos, relações com instituições financeiras e demandas envolvendo servidores públicos.
+              Advogado e fundador da Fontenele Advogados, Davi Fontenele atua de forma especializada na defesa dos direitos dos servidores públicos, com foco em Direito Administrativo, Constitucional e do Consumidor.
             </p>
             <p>
-              Sua prática é baseada na combinação entre técnica jurídica e visão estratégica, com foco em compreender o cenário antes de qualquer definição de caminho.
+              Sua atuação é marcada por uma abordagem técnica, estratégica e personalizada, voltada à proteção da carreira, da estabilidade funcional e da segurança financeira de seus clientes. Ao longo de sua trajetória, desenvolveu experiência na condução de demandas relacionadas a direitos remuneratórios, processos administrativos, contratos bancários e relações de consumo.
             </p>
             <p>
-              Ao longo de sua trajetória, desenvolveu atuação voltada à condução de casos que envolvem impacto financeiro relevante, sempre priorizando clareza na comunicação, organização das informações e tomada de decisão fundamentada.
+              Com compromisso pautado na ética, transparência e excelência jurídica, Davi Fontenele busca oferecer soluções seguras e eficientes, auxiliando servidores públicos e consumidores na tomada de decisões com maior clareza e segurança jurídica.
             </p>
             <p>
-              Sua atuação reforça o posicionamento do escritório: oferecer segurança jurídica por meio de análise consistente e orientação responsável.
+              Na Fontenele Advogados, acredita que uma advocacia especializada e responsável é essencial para garantir proteção, estabilidade e valorização dos direitos de cada cliente.
             </p>
           </div>
         </div>

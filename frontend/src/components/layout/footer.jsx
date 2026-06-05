@@ -62,22 +62,22 @@ export function Footer() {
           {/* Contatos */}
           <div className="flex flex-col md:flex-row flex-wrap gap-6">
             <ContactLink
-              href="mailto:contato@fonteneleadv.com.br"
+              href="mailto:contato@fonteneleadv.com"
               icon={<Mail className="size-3.5" />}
             >
-              contato@fonteneleadv.com.br
+              contato@fonteneleadv.com
             </ContactLink>
             <ContactLink
-              href="tel:+55DD988888888"
+              href="tel:+5592984016228"
               icon={<PhoneOutgoing className="size-3.5" />}
             >
-              +55 DD 98888-8888
+              (92) 98401-6228
             </ContactLink>
           </div>
 
           {/* Redes Sociais */}
           <div className="flex flex-wrap gap-8">
-            <SocialLink href="#" icon={<WhatsappIcon />}>
+            <SocialLink href="https://wa.me/5592984016228" icon={<WhatsappIcon />}>
               Whatsapp
             </SocialLink>
             <SocialLink href="#" icon={<InstagramIcon />}>

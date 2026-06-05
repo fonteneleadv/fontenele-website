@@ -12,7 +12,7 @@ import { InfoCard } from "../components/ui/info-card";
 import { ServiceCard } from "../components/ui/service-card";
 import { Accordion } from "../components/ui/accordion";
 import { Header } from "../components/layout/header";
-import { Check, Copy, Landmark, ShieldCheck, Users, Briefcase, MessageCircle, Mail, Phone, MapPin, Award, FileText, Search, Layers } from "lucide-react";
+import { Check, Copy, Landmark, ShieldCheck, Users, Briefcase, MessageCircle, Mail, Phone, MapPin, FileText, Search, Layers } from "lucide-react";
 
 const InstagramIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-5">
@@ -82,10 +82,10 @@ export default function ComponentLibrary() {
   const [activeComponent, setActiveComponent] = useState("button");
 
   const dropdownItems = [
-    { label: "Direito Bancário", icon: <Landmark className="size-5" /> },
+    { label: "Direito Administrativo", icon: <Landmark className="size-5" /> },
     { label: "Direito do Consumidor", icon: <ShieldCheck className="size-5" /> },
-    { label: "Direito Público", icon: <Users className="size-5" /> },
-    { label: "Consultoria", icon: <Briefcase className="size-5" /> },
+    { label: "Direito Constitucional", icon: <Users className="size-5" /> },
+    { label: "Consultoria Jurídica", icon: <Briefcase className="size-5" /> },
   ];
 
   return (
@@ -334,7 +334,7 @@ export default function ComponentLibrary() {
                 <CodeBlock 
                   language="jsx / react"
                   brandColorClass="bg-secondary"
-                  code={`const itensServicos = [\n  { label: "Direito Bancário", icon: <Landmark className="size-5" /> },\n  // ...\n];\n\n<NavDropdown title="Serviços" items={itensServicos} />`}
+                  code={`const itensServicos = [\n  { label: "Direito Administrativo", icon: <Landmark className="size-5" /> },\n  // ...\n];\n\n<NavDropdown title="Serviços" items={itensServicos} />`}
                 />
                 
                 <CodeBlock 
@@ -382,25 +382,23 @@ export default function ComponentLibrary() {
               <div className="border-b border-hairline pb-2">
                 <h3 className="text-2xl font-serif text-primary-deep">4. Link de Contato</h3>
                 <p className="text-muted text-sm mt-1">Usado principalmente no rodapé para e-mails, telefones e endereços. Transição sutil de cor no hover, sem sublinhado.</p>
+                <div className="flex flex-col gap-3 mt-4">
+                  <ContactLink icon={<Mail className="size-5" />}>contato@fonteneleadv.com</ContactLink>
+                  <ContactLink icon={<Phone className="size-5" />}>(92) 98401-6228</ContactLink>
+                </div>
               </div>
               
-              <div className="bg-canvas border border-hairline shadow-sm p-16 flex justify-center gap-10">
-                <ContactLink icon={<Mail className="size-5" />}>contato@fonteneleadv.com.br</ContactLink>
-                <ContactLink icon={<Phone className="size-5" />}>+55 (11) 99999-9999</ContactLink>
-                <ContactLink icon={<MapPin className="size-5" />}>Av. Paulista, 1000</ContactLink>
-              </div>
-
-              <div className="flex flex-col gap-4">
+              <div className="p-6 bg-zinc-50 border-t border-zinc-200">
                 <CodeBlock 
                   language="jsx / react"
                   brandColorClass="bg-secondary"
-                  code={`import { ContactLink } from "@/components/ui/contact-link";\nimport { Mail } from "lucide-react";\n\n<ContactLink icon={<Mail className="size-5" />}>\n  contato@fonteneleadv.com.br\n</ContactLink>`}
+                  code={`import { ContactLink } from "@/components/ui/contact-link";\nimport { Mail } from "lucide-react";\n\n<ContactLink icon={<Mail className="size-5" />}>\n  contato@fonteneleadv.com\n</ContactLink>`}
                 />
                 
                 <CodeBlock 
                   language="html / tailwind"
                   brandColorClass="bg-secondary"
-                  code={`\n<a href="mailto:contato@fonteneleadv.com.br" class="group flex items-center gap-2 text-base font-medium text-[#64748b] transition-colors duration-300 hover:text-[#bc6e3d]">\n  <span class="flex items-center justify-center">\n    <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>\n  </span>\n  <span>contato@fonteneleadv.com.br</span>\n</a>`}
+                  code={`\n<a href="mailto:contato@fonteneleadv.com" class="group flex items-center gap-2 text-base font-medium text-[#64748b] transition-colors duration-300 hover:text-[#bc6e3d]">\n  <span class="flex items-center justify-center">\n    <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>\n  </span>\n  <span>contato@fonteneleadv.com</span>\n</a>`}
                 />
               </div>
             </div>
@@ -598,8 +596,8 @@ export default function ComponentLibrary() {
               <div className="bg-canvas border border-hairline shadow-sm p-16 flex justify-center w-full">
                 <div className="w-full max-w-lg">
                   <ServiceCard 
-                    title="Direito Bancário" 
-                    description="Análise e condução de questões envolvendo contratos, instituições financeiras e relações bancárias."
+                    title="Direito Administrativo" 
+                    description="Análise e condução de demandas envolvendo licitações, contratos públicos, atos administrativos e fiscalizações."
                   />
                 </div>
               </div>
@@ -608,13 +606,13 @@ export default function ComponentLibrary() {
                 <CodeBlock 
                   language="jsx / react"
                   brandColorClass="bg-secondary"
-                  code={`import { ServiceCard } from "@/components/ui/service-card";\n\n<ServiceCard \n  title="Direito Bancário" \n  description="Análise e condução de questões envolvendo contratos, instituições financeiras e relações bancárias."\n/>`}
+                  code={`import { ServiceCard } from "@/components/ui/service-card";\n\n<ServiceCard \n  title="Direito Administrativo" \n  description="Análise e condução de demandas envolvendo licitações, contratos públicos, atos administrativos e fiscalizações."\n/>`}
                 />
                 
                 <CodeBlock 
                   language="html / tailwind"
                   brandColorClass="bg-secondary"
-                  code={`<a href="#" class="group flex flex-col justify-between transition-all duration-300 border-b border-secondary hover:border-primary-deep pb-8 gap-8">\n  <div class="flex items-end justify-between w-full">\n    <div class="flex flex-col gap-1 w-full max-w-sm">\n      <h3 class="font-serif text-3xl tracking-[-0.75px] leading-9 text-ink">\n        Direito Bancário\n      </h3>\n      <p class="text-base font-sans text-muted">\n        Análise e condução de questões envolvendo contratos, instituições financeiras e relações bancárias.\n      </p>\n    </div>\n    <div class="flex shrink-0">\n      <!-- Tertiary Button with Arrow -->\n      <span class="inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors h-10 px-0 py-2 text-secondary text-sm font-medium leading-none group-hover:text-primary-deep duration-300">\n        Ver mais\n        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>\n      </span>\n    </div>\n  </div>\n</a>`}
+                  code={`<a href="#" class="group flex flex-col justify-between transition-all duration-300 border-b border-secondary hover:border-primary-deep pb-8 gap-8">\n  <div class="flex items-end justify-between w-full">\n    <div class="flex flex-col gap-1 w-full max-w-sm">\n      <h3 class="font-serif text-3xl tracking-[-0.75px] leading-9 text-ink">\n        Direito Administrativo\n      </h3>\n      <p class="text-base font-sans text-muted">\n        Análise e condução de demandas envolvendo licitações, contratos públicos, atos administrativos e fiscalizações.\n      </p>\n    </div>\n    <div class="flex shrink-0">\n      <!-- Tertiary Button with Arrow -->\n      <span class="inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors h-10 px-0 py-2 text-secondary text-sm font-medium leading-none group-hover:text-primary-deep duration-300">\n        Ver mais\n        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>\n      </span>\n    </div>\n  </div>\n</a>`}
                 />
               </div>
             </div>
@@ -710,7 +708,7 @@ export default function ComponentLibrary() {
                 <CodeBlock 
                   language="html / tailwind"
                   brandColorClass="bg-primary-deep"
-                  code={`\n<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-8 py-4 flex items-center justify-between bg-[#092242] shadow-md">\n  \n  \n  <div class="w-48 h-auto text-white">\n    <svg viewBox="0 0 200 50" fill="currentColor">...</svg>\n  </div>\n\n  \n  <nav class="hidden md:flex items-center gap-8">\n    \n    <a href="#" class="relative pb-1 text-base font-medium transition-colors text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-[#f8ebe1] after:transition-all after:duration-300 after:w-full">\n      Início\n    </a>\n\n    \n    <a href="#" class="relative pb-1 text-base font-medium transition-colors text-white/80 hover:text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-[#f8ebe1] after:transition-all after:duration-300 after:w-0 hover:after:w-full">\n      Sobre nós\n    </a>\n\n    \n    <div class="relative group inline-block">\n      <button class="flex items-center gap-1.5 pb-2 text-base font-medium text-white/80 hover:text-white">\n        Serviços\n        <svg class="size-4 transition-transform duration-300 group-hover:-rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>\n      </button>\n      <div class="absolute left-0 top-[100%] w-full h-2 bg-transparent"></div>\n      <div class="absolute left-0 top-[calc(100%+0.5rem)] w-[280px] bg-white border border-[#e2e8f0] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 p-2">\n        <ul class="flex flex-col gap-1">\n           <li><a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-md text-[#020617] hover:bg-[#bc6e3d] hover:text-white">Direito Bancário</a></li>\n        </ul>\n      </div>\n    </div>\n\n  </nav>\n</header>`}
+                  code={`\n<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-8 py-4 flex items-center justify-between bg-[#092242] shadow-md">\n  \n  \n  <div class="w-48 h-auto text-white">\n    <svg viewBox="0 0 200 50" fill="currentColor">...</svg>\n  </div>\n\n  \n  <nav class="hidden md:flex items-center gap-8">\n    \n    <a href="#" class="relative pb-1 text-base font-medium transition-colors text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-[#f8ebe1] after:transition-all after:duration-300 after:w-full">\n      Início\n    </a>\n\n    \n    <a href="#" class="relative pb-1 text-base font-medium transition-colors text-white/80 hover:text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-[#f8ebe1] after:transition-all after:duration-300 after:w-0 hover:after:w-full">\n      Sobre nós\n    </a>\n\n    \n    <div class="relative group inline-block">\n      <button class="flex items-center gap-1.5 pb-2 text-base font-medium text-white/80 hover:text-white">\n        Serviços\n        <svg class="size-4 transition-transform duration-300 group-hover:-rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>\n      </button>\n      <div class="absolute left-0 top-[100%] w-full h-2 bg-transparent"></div>\n      <div class="absolute left-0 top-[calc(100%+0.5rem)] w-[280px] bg-white border border-[#e2e8f0] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 p-2">\n        <ul class="flex flex-col gap-1">\n           <li><a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-md text-[#020617] hover:bg-[#bc6e3d] hover:text-white">Direito Administrativo</a></li>\n        </ul>\n      </div>\n    </div>\n\n  </nav>\n</header>`}
                 />
               </div>
 

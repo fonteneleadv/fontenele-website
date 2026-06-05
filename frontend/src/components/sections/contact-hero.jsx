@@ -32,13 +32,17 @@ export function ContactHero() {
               <div className="text-zinc-400">
                 <Phone className="w-6 h-6" />
               </div>
-              <span className="text-lg text-zinc-500 font-sans tracking-tight">(11) 9 9999-9999</span>
+              <span className="text-lg text-zinc-500 font-sans tracking-tight">
+                <a href="tel:+5592984016228" className="hover:text-secondary transition-colors">(92) 98401-6228</a>
+              </span>
             </div>
             <div className="flex items-center gap-4">
               <div className="text-zinc-400">
                 <Mail className="w-6 h-6" />
               </div>
-              <span className="text-lg text-zinc-500 font-sans tracking-tight">contato@fontenele.adv.br</span>
+              <span className="text-lg text-zinc-500 font-sans tracking-tight">
+                <a href="mailto:contato@fonteneleadv.com" className="hover:text-secondary transition-colors">contato@fonteneleadv.com</a>
+              </span>
             </div>
           </div>
 
@@ -58,10 +62,12 @@ export function ContactHero() {
                   Atendimento rápido pelo WhatsApp
                 </h4>
                 <p className="text-[18px] text-zinc-500 leading-snug font-sans">
-                  Para um atendimento mais ágil, utilize o WhatsApp. Nossa equipe está disponível para responder dúvidas iniciais e orientar sobre os próximos passos.
+                  Para um atendimento mais ágil, utilize o WhatsApp ou clique no botão abaixo.
                 </p>
                 <a 
-                  href="#" 
+                  href="https://wa.me/5592984016228" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-80 pt-1"
                   style={{ 
                     backgroundImage: "linear-gradient(179.82deg, #57D163 6.25%, #23B33A 91.21%)",

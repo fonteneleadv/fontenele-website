@@ -1,10 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ComponentLibrary from "./pages/ComponentLibrary";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import BankingLaw from "./pages/servicos/BankingLaw";
+import AdministrativeLaw from "./pages/servicos/AdministrativeLaw";
 import ConsumerLaw from "./pages/servicos/ConsumerLaw";
-import PublicLaw from "./pages/servicos/PublicLaw";
+import ConstitutionalLaw from "./pages/servicos/ConstitutionalLaw";
 import Consulting from "./pages/servicos/Consulting";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
@@ -20,9 +20,12 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sobre-nos" element={<About />} />
-        <Route path="/servicos/direito-bancario" element={<BankingLaw />} />
+        <Route path="/servicos/direito-administrativo" element={<AdministrativeLaw />} />
+        <Route path="/servicos/direito-bancario" element={<Navigate to="/servicos/direito-administrativo" replace />} />
         <Route path="/servicos/direito-do-consumidor" element={<ConsumerLaw />} />
-        <Route path="/servicos/direito-publico" element={<PublicLaw />} />
+        <Route path="/servicos/direito-constitucional" element={<ConstitutionalLaw />} />
+        <Route path="/servicos/direito-institucional" element={<Navigate to="/servicos/direito-constitucional" replace />} />
+        <Route path="/servicos/direito-publico" element={<Navigate to="/servicos/direito-constitucional" replace />} />
         <Route path="/servicos/consultoria" element={<Consulting />} />
         <Route path="/contato" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />

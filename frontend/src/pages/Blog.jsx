@@ -10,10 +10,10 @@ import { sanityClient } from "@/lib/sanity";
 
 const categories = [
   "Todos",
-  "Direito Bancário",
+  "Direito Administrativo",
   "Direito do Consumidor",
-  "Direito Público",
-  "Consultoria",
+  "Direito Constitucional",
+  "Consultoria Jurídica",
 ];
 
 export default function Blog() {
@@ -55,7 +55,7 @@ export default function Blog() {
                 <span className="text-secondary">conscientes</span>
               </h1>
               <p className="text-body text-base md:text-lg max-w-2xl">
-                Análises, orientações e perspectivas sobre direito bancário, do consumidor, público e consultoria — escritas com clareza para quem precisa compreender antes de agir.
+                Análises, orientações e perspectivas sobre direito administrativo, constitucional, do consumidor e consultoria jurídica — escritas com clareza para quem precisa compreender antes de agir.
               </p>
             </div>
           </section>

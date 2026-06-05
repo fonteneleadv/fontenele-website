@@ -1,8 +1,8 @@
 export const companySpecs = {
   name: "Fontenele Advogados",
-  domain: "fontenele.adv.br",
-  contactEmail: "contato@fontenele.adv.br",
-  updateDate: "Maio de 2026",
+  domain: "fonteneleadv.com",
+  contactEmail: "contato@fonteneleadv.com",
+  updateDate: "Junho de 2026",
 };
 
 export const privacyPolicyHtml = `

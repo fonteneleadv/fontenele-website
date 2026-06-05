@@ -33,10 +33,10 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          {title: 'Direito Bancário', value: 'Direito Bancário'},
+          {title: 'Direito Administrativo', value: 'Direito Administrativo'},
           {title: 'Direito do Consumidor', value: 'Direito do Consumidor'},
-          {title: 'Direito Público', value: 'Direito Público'},
-          {title: 'Consultoria', value: 'Consultoria'},
+          {title: 'Direito Constitucional', value: 'Direito Constitucional'},
+          {title: 'Consultoria Jurídica', value: 'Consultoria Jurídica'},
         ],
         layout: 'radio',
       },

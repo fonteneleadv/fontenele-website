@@ -29,8 +29,9 @@ export function About() {
           </h2>
 
           <div className="flex flex-col gap-4 text-body text-base md:text-lg mb-8">
-            <p>A Fontenele Advogados é um escritório com atuação especializada em direito público e relações bancárias. Fundado pelo Dr. Francisco Fontenele, o escritório nasceu com o compromisso de oferecer uma advocacia de excelência, pautada pela ética, transparência e pelo atendimento personalizado.</p>
-            <p>Nosso foco está em fornecer soluções jurídicas eficazes, com uma abordagem estratégica e foco em resultados. Com anos de experiência acumulada...</p>
+            <p>A Fontenele Advogados é um escritório comprometido com a defesa estratégica dos direitos de servidores públicos, oferecendo atuação jurídica especializada nas áreas de Direito Administrativo, Constitucional, do Consumidor e Consultoria Jurídica.</p>
+            <p>Fundado pelo Dr. Davi Fontenele, o escritório nasceu com o compromisso de oferecer uma advocacia de excelência, pautada pela ética, transparência e pelo atendimento personalizado.</p>
+            <p>Nossa equipe trabalha com seriedade, transparência e excelência jurídica, buscando soluções seguras e eficientes para cada cliente. Com atendimento técnico, personalizado e focado em resultados, atuamos na proteção da carreira, da estabilidade funcional e dos direitos financeiros de servidores públicos ativos e aposentados.</p>
           </div>
 
           <div className="w-full border-y border-[#E5E7EB] py-6 mb-8 flex items-start gap-4">

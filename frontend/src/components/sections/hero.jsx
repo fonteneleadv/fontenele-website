@@ -4,7 +4,6 @@ import { Button } from "../ui/button";
 import { HeroDecorator } from "../ui/hero-decorator";
 import { Seal } from "../ui/seal";
 import HeroImage from "@/assets/hero-image.png";
-import { cn } from "@/lib/utils";
 
 export function Hero() {
   return (
@@ -12,18 +11,18 @@ export function Hero() {
       <div className="container mx-auto px-4 md:px-8 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
         
         {/* Left Content */}
-        <div className="flex flex-col items-start gap-8 lg:gap-[165px] w-full lg:w-1/2 z-10">
+        <div className="flex flex-col items-start gap-8 lg:gap-[100px] w-full lg:w-1/2 z-10">
           <div className="flex flex-col items-start gap-8 max-w-[594px]">
             <SectionHat>
-              Analisar, orientar e conduzir cada caso com precisão.
+              Uma estrutura preparada para analisar, orientar e conduzir cada caso com precisão.
             </SectionHat>
             
             <div className="flex flex-col items-start gap-4">
-              <h1 className="font-serif text-5xl md:text-[72px] leading-[1.1] md:leading-none tracking-[-1.8px] text-primary-ink">
-                Atuação jurídica com <span className="text-secondary">clareza, estratégia e responsabilidade</span>
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-[56px] leading-[1.15] tracking-[-1.5px] text-primary-ink">
+                Especialistas em <span className="text-secondary">Direito Administrativo</span>, com ênfase na defesa dos <span className="text-secondary">Servidores Públicos</span>, com foco em direitos remuneratórios, carreira e proteção funcional.
               </h1>
               <p className="font-sans text-base md:text-lg text-body leading-relaxed">
-                Especialistas em Direito dos servidores públicos, com foco em orientar decisões e proteger interesses de forma técnica e segura.
+                Atuação jurídica direcionada à proteção e valorização financeira da carreira do servidor público.
               </p>
             </div>
             
