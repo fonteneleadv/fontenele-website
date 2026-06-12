@@ -1,5 +1,5 @@
 import { SectionHat } from "../ui/section-hat";
-import LawyerImage from "@/assets/lawyer-davi.png";
+import LawyerImage from "@/assets/Foto Home.jpg";
 
 export function AboutLawyer() {
   return (
@@ -39,20 +39,21 @@ export function AboutLawyer() {
       </div>
 
       {/* 1. Imagem Mobile (Aparece por último no empilhamento mobile) */}
-      <div className="block lg:hidden w-full h-[450px] overflow-hidden z-0">
+      <div className="block lg:hidden w-full h-auto overflow-hidden z-0 bg-white">
         <img 
           src={LawyerImage} 
           alt="Dr. Davi Fontenele" 
-          className="w-full h-full object-cover object-top"
+          className="w-full h-auto object-contain"
         />
       </div>
 
       {/* 2. Imagem Desktop (Colada na borda ESQUERDA) */}
-      <div className="hidden lg:block absolute top-0 bottom-0 left-0 w-1/2 h-full z-0 overflow-hidden">
+      <div className="hidden lg:block absolute top-0 bottom-0 left-0 w-1/2 h-full z-0 overflow-hidden bg-white">
         <img 
           src={LawyerImage} 
           alt="Dr. Davi Fontenele" 
-          className="w-full h-full object-cover object-top" 
+          // object-contain garante que apareça por inteiro
+          className="w-full h-full object-contain object-left" 
         />
       </div>
 

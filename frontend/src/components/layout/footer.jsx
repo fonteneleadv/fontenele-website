@@ -77,13 +77,13 @@ export function Footer() {
 
           {/* Redes Sociais */}
           <div className="flex flex-wrap gap-8">
-            <SocialLink href="https://wa.me/5592984016228" icon={<WhatsappIcon />}>
+            <SocialLink href="https://wa.me/5592984016228" target="_blank" rel="noopener noreferrer" icon={<WhatsappIcon />}>
               Whatsapp
             </SocialLink>
-            <SocialLink href="#" icon={<InstagramIcon />}>
+            <SocialLink href="https://www.instagram.com/fontenele.advogados/" target="_blank" rel="noopener noreferrer" icon={<InstagramIcon />}>
               Instagram
             </SocialLink>
-            <SocialLink href="#" icon={<LinkedinIcon />}>
+            <SocialLink href="https://www.linkedin.com/company/fontenele-aguiar-advogados/people/" target="_blank" rel="noopener noreferrer" icon={<LinkedinIcon />}>
               LinkedIn
             </SocialLink>
           </div>

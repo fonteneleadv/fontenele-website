@@ -1,7 +1,7 @@
 import { SectionHat } from "../ui/section-hat";
 import { Button } from "../ui/button";
 import { CircleCheck } from "lucide-react";
-import AboutImage from "@/assets/about-image.png";
+import AboutImage from "@/assets/Foto Home.jpg";
 
 export function About() {
   return (
@@ -9,11 +9,11 @@ export function About() {
     <section className="w-full bg-white overflow-hidden relative">
 
       {/* 2. Imagem Mobile (Stacked, 100% width, colada) */}
-      <div className="block lg:hidden w-full h-[400px] mt-0 overflow-hidden z-0">
+      <div className="block lg:hidden w-full h-auto mt-0 overflow-hidden z-0 bg-white">
         <img
           src={AboutImage}
           alt="Dr. Fontenele no escritório"
-          className="w-full h-full object-cover object-top"
+          className="w-full h-auto object-contain"
         />
       </div>
 
@@ -50,12 +50,12 @@ export function About() {
       {/* --- Estratégia da Imagem (Colada nos cantos) --- */}
 
       {/* 1. Imagem Desktop (Alinhada à direita da viewport, pegando metade da tela) */}
-      <div className="hidden lg:block absolute top-0 bottom-0 right-0 w-1/2 h-full z-0 overflow-hidden">
+      <div className="hidden lg:block absolute top-0 bottom-0 right-0 w-1/2 h-full z-0 overflow-hidden bg-white">
         <img
           src={AboutImage}
           alt="Dr. Fontenele no escritório"
-          // object-cover garante que preencha, e object-center (ou object-top) foca no rosto
-          className="w-full h-full object-cover object-top"
+          // object-contain garante que apareça por inteiro
+          className="w-full h-full object-contain object-right"
         />
       </div>
 
