@@ -5,42 +5,32 @@ import { BadgeCheck } from "lucide-react";
 export function AboutStructure() {
   const topics = [
     {
-      title: "Escuta e compreensão",
-      desc: "análise detalhada do cenário apresentado pelo cliente antes de qualquer definição de estratégia"
+      title: "Compreensão detalhada do caso apresentado",
     },
     {
-      title: "Avaliação técnica",
-      desc: "leitura da legislação aplicável, do estatuto funcional e dos documentos relevantes para o caso"
+      title: "Análise jurídica consistente",
     },
     {
-      title: "Definição de caminhos",
-      desc: "apresentação clara das possibilidades jurídicas, com orientação sobre riscos, prazos e expectativas"
+      title: "Definição clara de possíveis caminhos",
     },
     {
-      title: "Condução estruturada",
-      desc: "acompanhamento das demandas nas esferas administrativa e judicial, com comunicação transparente em cada etapa"
+      title: "Condução estruturada, quando necessária",
     }
   ];
 
   return (
     <section className="w-full bg-white py-20 md:py-32">
       <div className="container mx-auto px-4 md:px-8 max-w-5xl flex flex-col items-start md:items-center">
-        
+
         {/* Cabeçalho */}
         <div className="flex flex-col items-start text-left md:items-center md:text-center gap-6 mb-16 max-w-4xl">
           <SectionHat className="md:mx-auto">Estrutura de atuação</SectionHat>
-          
+
           <h2 className="font-serif text-3xl md:text-4xl lg:text-[48px] leading-[1.2] tracking-[-1.2px] text-primary-ink">
-            A Fontenele Advogados opera com uma estrutura voltada à análise técnica e ao acompanhamento estratégico das demandas, com foco na{" "}
-            <span className="text-secondary">
-              defesa dos direitos dos servidores públicos.
-            </span>
+            A Fontenele Advogados opera com uma estrutura voltada à análise técnica e ao acompanhamento estratégico dos casos.
           </h2>
-          
+
           <div className="text-zinc-500 text-base md:text-lg max-w-[700px] flex flex-col gap-3">
-            <p>
-              Cada caso é conduzido de forma individualizada, respeitando as particularidades da carreira, do ente público e da situação apresentada.
-            </p>
             <p className="font-semibold text-secondary md:mx-auto">
               O fluxo de atuação é organizado para garantir:
             </p>
@@ -63,8 +53,7 @@ export function AboutStructure() {
         {/* Card de Atenção Inferior */}
         <div className="w-full">
           <AttentionCard>
-            A atuação é orientada por processos que priorizam organização, previsibilidade e responsabilidade.
-            Mais do que volume de casos, o foco está na qualidade da análise e na clareza das decisões tomadas junto ao cliente.
+            A atuação é orientada por processos que priorizam organização, previsibilidade e responsabilidade em cada etapa. Nosso foco está na qualidade da análise e na clareza das decisões.
           </AttentionCard>
         </div>
 

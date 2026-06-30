@@ -8,24 +8,24 @@ export function AboutTeam() {
     <section className="py-20 lg:py-32 bg-white">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0">
-          
+
           {/* Coluna de Texto */}
           <div className="flex flex-col justify-center lg:pr-16 lg:border-r border-secondary/30">
             <SectionHat className="mb-6">Equipe</SectionHat>
-            
+
             <h2 className="text-3xl lg:text-[40px] leading-tight font-serif text-primary-ink mb-8">
-              A atuação do escritório é conduzida por profissionais com foco em direito Administrativo, constitucional e do consumidor.
+              Nossa equipe é formada por profissionais com sólida qualificação e atuação especializada em Direito Administrativo, Constitucional e do Consumidor.
             </h2>
 
             <div className="space-y-6 text-zinc-500 text-lg leading-relaxed font-sans mb-10">
               <p>
-                A Fontenele Advogados conta com uma equipe composta por mais de 15 colaboradores, formada por profissionais comprometidos com excelência, organização e atendimento estratégico.
+                Áreas que exigem constante atualização técnica e profundo conhecimento da legislação e da jurisprudência dos tribunais.
               </p>
               <p>
-                Nossa atuação reúne conhecimento técnico, experiência prática e atendimento humanizado, permitindo oferecer suporte jurídico eficiente e personalizado aos servidores públicos em demandas administrativas, funcionais e patrimoniais.
+                A combinação dessas especialidades permite uma análise ampla e estratégica das demandas, oferecendo soluções jurídicas seguras para servidores públicos que buscam a proteção de seus direitos.
               </p>
               <p>
-                Trabalhamos de forma integrada para garantir segurança jurídica, agilidade e soluções alinhadas às necessidades de cada cliente.
+                Com foco na excelência técnica, no atendimento personalizado e na atuação responsável, trabalhamos para entregar orientações claras e estratégias jurídicas alinhadas às necessidades de cada cliente.
               </p>
             </div>
 

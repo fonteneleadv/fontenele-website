@@ -9,23 +9,21 @@ export function Hero() {
   return (
     <section className="w-full relative min-h-screen pt-24 pb-12 md:pt-32 md:pb-24 flex items-center bg-canvas">
       <div className="container mx-auto px-4 md:px-8 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
-        
+
         {/* Left Content */}
         <div className="flex flex-col items-start gap-8 lg:gap-[100px] w-full lg:w-1/2 z-10">
           <div className="flex flex-col items-start gap-8 max-w-[594px]">
             <SectionHat>
-              Uma estrutura preparada para analisar, orientar e conduzir cada caso com precisão.
+              Atuação jurídica com clareza, estratégia e responsabilidade.
             </SectionHat>
-            
+
             <div className="flex flex-col items-start gap-4">
               <h1 className="font-serif text-4xl md:text-5xl lg:text-[56px] leading-[1.15] tracking-[-1.5px] text-primary-ink">
-                Especialistas em <span className="text-secondary">Direito Administrativo</span>, com ênfase na defesa dos <span className="text-secondary">Servidores Públicos</span>, com foco em direitos remuneratórios, carreira e proteção funcional.
+                Especialistas em <span className="text-secondary">Direito Administrativo</span>, com foco em orientar decisões e proteger os interesses do <span className="text-secondary">Servidores Públicos</span> de forma técnica e segura.
               </h1>
-              <p className="font-sans text-base md:text-lg text-body leading-relaxed">
-                Atuação jurídica direcionada à proteção e valorização financeira da carreira do servidor público.
-              </p>
+              <p className="font-sans text-base md:text-lg text-body leading-relaxed">Uma estrutura preparada para analisar, orientar e conduzir cada caso com precisão.</p>
             </div>
-            
+
             <div className="flex flex-wrap items-center gap-4 mt-2">
               <Button to="/contato" variant="default" withArrow>
                 Falar com um especialista
@@ -35,7 +33,7 @@ export function Hero() {
               </Button>
             </div>
           </div>
-          
+
           <div className="hidden lg:block mt-auto">
             <HeroDecorator />
           </div>
@@ -45,21 +43,21 @@ export function Hero() {
         <div className="relative w-full lg:w-[533px] h-[400px] lg:h-[646px] rounded-sm overflow-visible z-10 mt-12 lg:mt-0">
           {/* Main Image Container */}
           <div className="relative w-full h-full overflow-hidden rounded-[8px]">
-            <img 
-              src={HeroImage} 
-              alt="Martelo e balança da justiça" 
+            <img
+              src={HeroImage}
+              alt="Martelo e balança da justiça"
               className="absolute inset-0 w-full h-full object-cover z-0"
             />
             {/* Ellipse overlay from Figma */}
             <div className="absolute inset-0 mix-blend-overlay bg-gradient-to-tr from-transparent to-black/20 z-20 pointer-events-none" />
           </div>
-          
+
           {/* Seal */}
           <div className="absolute -bottom-4 left-0 md:-bottom-[64px] md:-left-[106px] z-30 scale-75 md:scale-100 origin-bottom-left md:origin-center">
             <Seal />
           </div>
         </div>
-        
+
       </div>
     </section>
   );

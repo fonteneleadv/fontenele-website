@@ -29,11 +29,11 @@ export default function ConsumerLaw() {
         <ScrollReveal>
           <ServiceDetail
             hat="Como funciona o serviço"
-            title="Atuação em Direito Bancário"
+            title="Atuação em Direito do Consumidor"
             paragraphs={[
-              "Atuamos de forma especializada na defesa de servidores públicos em demandas envolvendo relações bancárias e financeiras, combatendo cobranças abusivas, fraudes e irregularidades praticadas por instituições financeiras.",
-              "Com ampla experiência em Direito do Consumidor Bancário, oferecemos assessoria jurídica estratégica para proteger o patrimônio, a renda e os direitos dos servidores públicos municipais, estaduais e federais, tanto na esfera administrativa quanto judicial.",
-              "Sabemos que muitos servidores públicos enfrentam situações de endividamento excessivo, contratos abusivos e fraudes que comprometem sua estabilidade financeira. Por isso, atuamos com transparência, proximidade e excelência técnica para oferecer a melhor estratégia jurídica em cada situação."
+              "O Direito do Consumidor Bancário regula a relação entre pessoas físicas e instituições financeiras, estabelecendo limites para cobranças, contratos e práticas comerciais.",
+              "A atuação da Fontenele Advogados nessa área é voltada especificamente à defesa do servidor público, que, por ter renda estável e margem consignável, frequentemente se torna alvo de práticas abusivas por parte de bancos e financeiras.",
+              "O trabalho é desenvolvido com base na análise técnica dos contratos, identificação de irregularidades e condução estratégica das demandas, tanto na esfera administrativa quanto judicial, sempre com foco na proteção dos direitos e na recuperação de valores indevidos."
             ]}
             image={detailImg}
           />
@@ -43,33 +43,29 @@ export default function ConsumerLaw() {
           <ServiceTopics
             hat="Para quem é?"
             title="Para quem essa atuação é indicada"
-            description="A atuação em Direito Bancário é indicada para servidores públicos que possuem ou já tiveram relação com instituições financeiras, especialmente em situações que envolvem contratos ou decisões financeiras relevantes."
+            description="A atuação em Direito do Consumidor é direcionada principalmente para:"
             topics={[
-              "Funcionários públicos com empréstimos ou financiamentos",
-              "Servidores que possuem contratos bancários ativos",
-              "Servidor público que busca entender melhor condições contratuais",
-              "Situações que envolvem múltiplas operações financeiras",
-              "Servidores com cartão de crédito consignado e encargos abusivos",
-              "Quem enfrenta situação de superendividamento e busca reorganização jurídica"
+              "Servidores públicos com empréstimos ou descontos consignados em folha",
+              "Servidores públicos que identificaram cobranças ou descontos indevidos",
+              "Servidores públicos com cartão de crédito consignado e encargos abusivos",
+              "Servidores públicos que enfrentam situação de superendividamento ",
             ]}
+            alertText="Também se aplica a situações em que há necessidade de revisar contratos ou buscar indenizações por danos causados por instituições financeiras."
           />
         </ScrollReveal>
 
         <ScrollReveal>
           <ServiceSituations
             hat="Situações comuns"
-            title={<>Situações que podem exigir <span className="text-secondary">análise em Direito Bancário para servidores públicos</span></>}
-            intro="Alguns cenários são mais recorrentes quando se trata de relações bancárias e podem demandar análise jurídica:"
+            title={<>Situações que podem exigir <span className="text-secondary">análise em Direito do Consumidor</span></>}
+            intro="Cada caso possui particularidades, mas algumas situações costumam demandar análise jurídica nessa área:"
             bullets={[
-              "Empréstimos consignados abusivos",
-              "Cartão de crédito consignado",
-              "Descontos indevidos em folha de pagamento",
-              "Fraudes bancárias e empréstimos não reconhecidos",
-              "Restituição de valores cobrados indevidamente",
-              "Contratos com cláusulas abusivas que precisam ser revisadas",
-              "Danos morais ou materiais causados por condutas de instituições financeiras"
+              "Anulação de descontos em folha não reconhecidos ou não autorizados",
+              "Indenização por fraudes bancárias",
+              "Recuperação em dobro de valores de cobranças indevidas em consignados",
+              "Indenização por danos morais e materiais causados por instituições bancárias",
             ]}
-            outro="Nosso trabalho é pautado na análise individualizada de cada caso, buscando soluções rápidas, seguras e eficazes para minimizar prejuízos financeiros e garantir o respeito aos direitos do consumidor."
+            outro="A análise técnica permite identificar irregularidades e avaliar os melhores caminhos para a defesa dos seus direitos."
             image={situationImg}
             buttonText="Quero saber mais sobre a análise técnica"
           />

@@ -20,7 +20,7 @@ export default function AdministrativeLaw() {
           <ServiceHero
             hat="Atuação técnica com foco na segurança jurídica e na valorização dos direitos do servidor público."
             title={<><span className="text-secondary block">Direito Administrativo</span> com ênfase em Servidores Públicos</>}
-            description="Atuação jurídica voltada à análise e condução de demandas que envolvem servidores públicos e relações com o poder público."
+            description="Atuação técnica com foco na segurança jurídica e na valorização dos direitos do servidor público."
             image={heroImg}
           />
         </ScrollReveal>
@@ -28,13 +28,12 @@ export default function AdministrativeLaw() {
         <ScrollReveal>
           <ServiceDetail
             hat="Como funciona o serviço"
-            title="Advocacia especializada em Servidores Públicos"
+            title="Atuação em Direito Administrativo"
             image={detailImg}
             paragraphs={[
-              "Sabemos que muitos servidores enfrentam perdas salariais, negativas indevidas da Administração Pública e dificuldades para garantir direitos previstos em lei. Por isso, oferecemos uma atuação técnica, transparente e focada em resultados.",
               "O Direito Administrativo regula a relação entre o servidor público e o Estado, abrangendo direitos, deveres e garantias no exercício da função pública.",
               "A atuação da Fontenele Advogados nessa área é voltada à análise e condução de demandas que impactam diretamente a vida funcional e financeira do servidor, desde questões do cotidiano da carreira até situações de maior complexidade disciplinar ou judicial.",
-              "Cada carreira possui regras próprias. Analisamos detalhadamente o estatuto, plano de cargos e legislação aplicável para construir a melhor estratégia jurídica para o seu caso. Nosso objetivo é garantir segurança jurídica, valorização profissional e recuperação de direitos financeiros de servidores públicos."
+              "O trabalho é desenvolvido com base na leitura técnica da legislação, compreensão da estrutura administrativa e organização estratégica de cada caso, garantindo uma atuação segura e orientada para resultados.",
             ]}
           />
         </ScrollReveal>
@@ -46,12 +45,11 @@ export default function AdministrativeLaw() {
             description="A atuação em Direito Administrativo é direcionada principalmente para:"
             topics={[
               "Servidores públicos municipais, estaduais e federais",
-              "Servidores em processo administrativo disciplinar (PAD)",
-              "Candidatos aprovados em concursos públicos com direitos ameaçados",
-              "Aposentados e pensionistas vinculados ao serviço público",
-              "Servidores que buscam revisão de direitos funcionais ou reintegração"
+              "Servidores públicos em atividade ou aposentados",
+              "Servidores públicos militares em atividade ou na reserva remunerada",
+              "Aposentados e pensionistas vinculados ao serviço público ",
             ]}
-            alertText="Nosso compromisso é oferecer uma advocacia moderna, acessível e eficiente, pautada pela ética, transparência e comunicação clara com o cliente."
+            alertText="Também se aplica a situações em que há necessidade de compreender os impactos das decisões da administração pública sobre a carreira ou a remuneração do servidor."
           />
         </ScrollReveal>
 
@@ -61,16 +59,12 @@ export default function AdministrativeLaw() {
             title={<>Situações que podem exigir <span className="text-secondary">análise em Direito Administrativo</span></>}
             intro="Cada caso possui particularidades, mas algumas situações costumam demandar análise jurídica nessa área:"
             bullets={[
-              "Progressões e promoções funcionais",
-              "Gratificações e adicionais",
-              "Férias e licenças não usufruídas",
-              "Licenças e direitos estatutários",
-              "Cobrança de valores retroativos",
-              "Instauração ou andamento de PAD e necessidade de defesa disciplinar",
-              "Questionamentos em concursos públicos — fases, eliminações ou nomeações",
-              "Planejamento e pedidos relacionados à aposentadoria e direitos previdenciários"
+              "Recuperação de valores decorrente da diferença salarial retroativa",
+              "Concessão da promoção atrasada, pela via judicial",
+              "Transformação de férias não usufruídas em indenização",
+              "Transformação de licenças-prêmios não usufruídas em indenização",
             ]}
-            outro="Acreditamos que o servidor público merece uma defesa jurídica qualificada e comprometida com resultados concretos."
+            outro="A análise técnica permite identificar irregularidades e avaliar os melhores caminhos para a defesa dos seus direitos."
             image={situationsImg}
             buttonText="Esclarecer minha situação"
           />

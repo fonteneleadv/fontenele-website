@@ -19,9 +19,9 @@ export default function ConstitutionalLaw() {
       <main className="flex-1">
         <ScrollReveal>
           <ServiceHero
-            hat="Compreensão técnica das estruturas constitucionais para orientação segura e estratégica."
-            title={<><span className="text-secondary block">Direito Constitucional</span> e a efetivação das garantias do servidor público</>}
-            description="Atuação voltada à defesa dos direitos fundamentais dos servidores públicos, incluindo estabilidade, acesso aos cargos públicos, legalidade administrativa, ampla defesa e valorização da carreira pública."
+            hat="Atuação estratégica para identificar omissões e ilegalidades, buscando a valorização dos direitos do servidor público"
+            title={<><span className="text-secondary block">Direito Constitucional</span> aplicado às relações dos servidores públicos com a Administração Pública.</>}
+            description="Atuação jurídica voltada à análise e condução de demandas que envolvem servidores públicos e relações com o poder público."
             image={heroImg}
           />
         </ScrollReveal>
@@ -32,9 +32,8 @@ export default function ConstitutionalLaw() {
             title="Atuação em Direito Constitucional"
             paragraphs={[
               "O Direito Constitucional regula as relações entre o indivíduo e a administração pública, abrangendo normas, deveres e direitos aplicáveis a servidores e demais vínculos institucionais.",
-              "A atuação especializada nessa área busca assegurar o cumprimento das garantias previstas na Constituição Federal, oferecendo suporte jurídico em situações que envolvam direitos funcionais, concursos públicos, remuneração, aposentadoria e proteção contra atos administrativos ilegais.",
-              "Um exemplo frequente é o mandado de segurança para garantir promoção funcional diante da omissão da Administração Pública, quando o servidor preenche todos os requisitos legais, mas o órgão responsável deixa de analisar ou implementar o direito.",
-              "Com orientação técnica e estratégica, o servidor público possui maior segurança jurídica para defender seus direitos e preservar sua carreira."
+              "A atuação da Fontenele Advogados nessa área é direcionada à análise e condução de situações que envolvem impacto jurídico e, muitas vezes, reflexos diretos na vida funcional e financeira do cliente.",
+              "O trabalho é desenvolvido com base na compreensão das normas constitucionais, interpretação adequada da legislação e organização da situação apresentada, permitindo uma avaliação técnica e estruturada de cada caso.",
             ]}
             image={detailImg}
           />
@@ -46,10 +45,10 @@ export default function ConstitutionalLaw() {
             title="Para quem essa atuação é indicada"
             description="A atuação em Direito Constitucional é direcionada principalmente para:"
             topics={[
-              "Servidores efetivos e temporários",
-              "Militares",
-              "Aposentados e pensionistas vinculados ao serviço público",
-              "Candidatos a concursos públicos"
+              "Servidores públicos municipais, estaduais e federais",
+              "Servidores públicos em atividade ou aposentados",
+              "Servidores públicos militares em atividade ou na reserva remunerada",
+              "Aposentados e pensionistas vinculados ao serviço público"
             ]}
             alertText="Também se aplica a situações em que há necessidade de compreender direitos, deveres ou impactos decorrentes de decisões administrativas."
           />
@@ -61,13 +60,10 @@ export default function ConstitutionalLaw() {
             title={<>Situações que podem exigir <span className="text-secondary">análise em Direito Constitucional</span></>}
             intro="Cada caso possui particularidades, mas algumas situações costumam demandar análise jurídica nessa área:"
             bullets={[
-              "Omissão da administração pública",
-              "Cortes indevidos de remuneração",
-              "Gratificações e adicionais não reconhecidos",
-              "Remoção e transferência irregular",
-              "Revisão de aposentadoria",
-              "Atos administrativos ilegais que afetam a estabilidade ou carreira",
-              "Mandado de segurança para garantia de direitos funcionais"
+              "Impactos financeiros relacionados à evolução na carreira pública",
+              "Situações envolvendo decisões administrativas",
+              "Necessidade de interpretação de normas constitucionais aplicáveis ao servidor",
+              "Questionamentos sobre procedimentos ou vínculos com a administração",
             ]}
             outro="A análise técnica permite compreender o cenário e avaliar quais caminhos são possíveis dentro da legislação aplicável."
             image={situationImg}

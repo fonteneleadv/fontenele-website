@@ -5,10 +5,10 @@ import { Seal } from "../ui/seal";
 import AboutHeroImage from "@/assets/about-hero-image.png";
 
 const paragraphs = [
-  "A Fontenele Advogados nasceu a partir da identificação de uma realidade recorrente entre servidores públicos: profissionais com estabilidade e organização financeira, mas frequentemente inseridos em situações jurídicas complexas envolvendo carreira, remuneração, relações bancárias e direitos funcionais.",
-  "Ao longo da atuação prática, tornou-se evidente que muitos desses problemas não estavam relacionados à falta de planejamento, mas à ausência de orientação jurídica clara sobre normas administrativas, contratos, direitos estatutários e implicações legais que impactam diretamente a vida funcional e financeira do servidor.",
-  "A partir dessa constatação, o escritório consolidou sua atuação com foco em Direito Administrativo, Direito Constitucional e Direito do Consumidor, oferecendo suporte técnico, análise estratégica e condução responsável de cada demanda.",
-  "Hoje, a Fontenele Advogados atua de forma especializada na defesa dos direitos e interesses de servidores públicos, com foco em segurança jurídica, proteção da carreira e soluções eficientes para situações que exigem precisão, estratégia e confiança.",
+  "A Fontenele Advogados nasceu a partir da identificação de um padrão recorrente: servidores públicos com renda estável, mas inseridos em estruturas contratuais complexas, com impacto direto na organização financeira e funcional.",
+  "Ao longo da atuação prática, tornou-se evidente que muitos desses casos não estavam relacionados à falta de capacidade financeira, mas à ausência de clareza sobre contratos, normas administrativas e implicações jurídicas.",
+  "A partir desse contexto, o escritório consolidou sua atuação com foco em Direito Administrativo, Direito Constitucional e Direito do Consumidor, direcionando sua prática para análise técnica, orientação estruturada e condução responsável de cada caso.",
+  "Hoje, a Fontenele Advogados atua de forma especializada na compreensão e organização de situações jurídicas que exigem precisão, estratégia e segurança na tomada de decisão.",
 ];
 
 export function AboutHero() {

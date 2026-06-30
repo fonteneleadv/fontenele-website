@@ -28,7 +28,7 @@ export function Blog() {
             Informação jurídica como base para <span className="text-secondary">boas decisões</span>
           </h2>
           <p className="text-body text-base md:text-lg">
-            O acesso à informação clara é parte essencial de qualquer decisão jurídica. Por isso, o escritório também atua na produção de conteúdos que ajudam a compreender temas relevantes do direito público, bancário e do consumidor.
+            O acesso à informação clara é parte essencial de qualquer decisão jurídica. Por isso, o escritório também atua na produção de conteúdos que ajudam a compreender temas relevantes do  direito administrativo, constitucional e do consumidor.
           </p>
         </div>
 
