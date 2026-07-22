@@ -18,7 +18,7 @@ export function Hero() {
             </SectionHat>
 
             <div className="flex flex-col items-start gap-4">
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-[56px] leading-[1.15] tracking-[-1.5px] text-primary-ink">
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-[42px] leading-[1.15] tracking-[-1.5px] text-primary-ink">
                 Especialistas em <span className="text-secondary">Direito Administrativo</span>, com foco em orientar decisões e proteger os interesses do <span className="text-secondary">Servidores Públicos</span> de forma técnica e segura.
               </h1>
               <p className="font-sans text-base md:text-lg text-body leading-relaxed">Uma estrutura preparada para analisar, orientar e conduzir cada caso com precisão.</p>
