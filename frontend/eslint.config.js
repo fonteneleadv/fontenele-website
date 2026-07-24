@@ -17,5 +17,13 @@ export default defineConfig([
       globals: globals.browser,
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
+    rules: {
+      // Permite os exports de dados do react-router (loader/action) co-locados
+      // com o componente, sem quebrar a regra de Fast Refresh.
+      'react-refresh/only-export-components': [
+        'error',
+        { allowConstantExport: true, allowExportNames: ['loader', 'action', 'meta'] },
+      ],
+    },
   },
 ])

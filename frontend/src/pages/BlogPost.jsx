@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { PortableText } from "@portabletext/react";
 import { Header } from "@/components/layout/header";
@@ -19,55 +19,31 @@ function formatDate(iso) {
   });
 }
 
-export default function BlogPost() {
-  const { slug } = useParams();
-  const [post, setPost] = useState(null);
-  const [relatedPosts, setRelatedPosts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+// Roda no build (SSG): busca o post e os relacionados por slug. GROQ verbatim.
+export async function loader({ params }) {
+  const post = await sanityClient.fetch(
+    `*[_type == "post" && slug.current == $slug][0]`,
+    { slug: params.slug }
+  );
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    setIsLoading(true);
-
-    sanityClient
-      .fetch(`*[_type == "post" && slug.current == $slug][0]`, { slug })
-      .then((data) => {
-        setPost(data);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.error(error);
-        setIsLoading(false);
-      });
-  }, [slug]);
-
-  useEffect(() => {
-    if (!post) {
-      setRelatedPosts([]);
-      return;
-    }
-    sanityClient
-      .fetch(
+  const relatedPosts = post
+    ? await sanityClient.fetch(
         `*[_type == "post" && slug.current != $slug] | order(publishedAt desc)[0...3] {
           _id, title, "slug": slug.current, publishedAt, category, mainImage
         }`,
-        { slug: post.slug?.current ?? slug }
+        { slug: params.slug }
       )
-      .then((data) => setRelatedPosts(data))
-      .catch(console.error);
-  }, [post, slug]);
+    : [];
 
-  if (isLoading) {
-    return (
-      <div className="min-h-screen w-full flex flex-col bg-canvas font-sans">
-        <Header />
-        <main className="flex-1 flex items-center justify-center pt-32 pb-20">
-          <p className="text-muted text-base">Carregando artigo…</p>
-        </main>
-        <Footer />
-      </div>
-    );
-  }
+  return { post, relatedPosts };
+}
+
+export default function BlogPost() {
+  const { post, relatedPosts } = useLoaderData();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!post) {
     return (

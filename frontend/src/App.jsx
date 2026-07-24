@@ -1,5 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { RootLayout } from "./components/layout/root-layout";
+import { sanityClient } from "./lib/sanity";
 import ComponentLibrary from "./pages/ComponentLibrary";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -8,8 +9,8 @@ import ConsumerLaw from "./pages/servicos/ConsumerLaw";
 import ConstitutionalLaw from "./pages/servicos/ConstitutionalLaw";
 import Consulting from "./pages/servicos/Consulting";
 import Contact from "./pages/Contact";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
+import Blog, { loader as blogLoader } from "./pages/Blog";
+import BlogPost, { loader as blogPostLoader } from "./pages/BlogPost";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import CookiesPolicy from "./pages/CookiesPolicy";
@@ -28,8 +29,19 @@ const routes = [
       { path: "servicos/direito-publico", element: <Navigate to="/servicos/direito-constitucional" replace /> },
       { path: "servicos/consultoria", Component: Consulting },
       { path: "contato", Component: Contact },
-      { path: "blog", Component: Blog },
-      { path: "blog/:slug", Component: BlogPost },
+      { path: "blog", Component: Blog, loader: blogLoader },
+      {
+        path: "blog/:slug",
+        Component: BlogPost,
+        loader: blogPostLoader,
+        // Enumera os slugs no build para pré-renderizar um .html por artigo.
+        getStaticPaths: async () => {
+          const slugs = await sanityClient.fetch(
+            `*[_type == "post" && defined(slug.current)].slug.current`
+          );
+          return slugs.map((slug) => `blog/${slug}`);
+        },
+      },
       { path: "politica-de-privacidade", Component: PrivacyPolicy },
       { path: "termos-de-uso", Component: TermsOfUse },
       { path: "politica-de-cookies", Component: CookiesPolicy },

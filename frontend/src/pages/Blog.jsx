@@ -1,4 +1,5 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useMemo } from "react";
+import { useLoaderData } from "react-router-dom";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Cta } from "@/components/sections/cta";
@@ -16,25 +17,18 @@ const categories = [
   "Consultoria Jurídica",
 ];
 
-export default function Blog() {
-  const [activeCategory, setActiveCategory] = useState("Todos");
-  const [posts, setPosts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+// Roda no build (SSG): os posts entram no HTML gerado, indexáveis pelo Google.
+// GROQ mantido verbatim. Em navegação client-side, o react-router reexecuta o loader.
+export async function loader() {
+  const posts = await sanityClient.fetch(`*[_type == "post"] | order(publishedAt desc) {
+    _id, title, "slug": slug.current, publishedAt, category, mainImage
+  }`);
+  return { posts };
+}
 
-  useEffect(() => {
-    sanityClient
-      .fetch(`*[_type == "post"] | order(publishedAt desc) {
-        _id, title, "slug": slug.current, publishedAt, category, mainImage
-      }`)
-      .then((data) => {
-        setPosts(data);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.error(error);
-        setIsLoading(false);
-      });
-  }, []);
+export default function Blog() {
+  const { posts } = useLoaderData();
+  const [activeCategory, setActiveCategory] = useState("Todos");
 
   const filteredPosts = useMemo(() => {
     if (activeCategory === "Todos") return posts;
@@ -81,9 +75,7 @@ export default function Blog() {
 
           <section className="w-full bg-canvas pb-24 md:pb-32">
             <div className="container mx-auto px-4 md:px-8">
-              {isLoading ? (
-                <p className="text-center text-muted text-base">Carregando artigos…</p>
-              ) : filteredPosts.length > 0 ? (
+              {filteredPosts.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
                   {filteredPosts.map((post) => (
                     <ArticleCard key={post._id} article={post} />
