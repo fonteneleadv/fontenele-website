@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+import { RootLayout } from "./components/layout/root-layout";
 import ComponentLibrary from "./pages/ComponentLibrary";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -12,30 +13,29 @@ import BlogPost from "./pages/BlogPost";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import CookiesPolicy from "./pages/CookiesPolicy";
-import { CookieBanner } from "./components/ui/cookie-banner";
+const routes = [
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [
+      { index: true, Component: Home },
+      { path: "sobre-nos", Component: About },
+      { path: "servicos/direito-administrativo", Component: AdministrativeLaw },
+      { path: "servicos/direito-bancario", element: <Navigate to="/servicos/direito-administrativo" replace /> },
+      { path: "servicos/direito-do-consumidor", Component: ConsumerLaw },
+      { path: "servicos/direito-constitucional", Component: ConstitutionalLaw },
+      { path: "servicos/direito-institucional", element: <Navigate to="/servicos/direito-constitucional" replace /> },
+      { path: "servicos/direito-publico", element: <Navigate to="/servicos/direito-constitucional" replace /> },
+      { path: "servicos/consultoria", Component: Consulting },
+      { path: "contato", Component: Contact },
+      { path: "blog", Component: Blog },
+      { path: "blog/:slug", Component: BlogPost },
+      { path: "politica-de-privacidade", Component: PrivacyPolicy },
+      { path: "termos-de-uso", Component: TermsOfUse },
+      { path: "politica-de-cookies", Component: CookiesPolicy },
+      { path: "components", Component: ComponentLibrary },
+    ],
+  },
+];
 
-export default function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/sobre-nos" element={<About />} />
-        <Route path="/servicos/direito-administrativo" element={<AdministrativeLaw />} />
-        <Route path="/servicos/direito-bancario" element={<Navigate to="/servicos/direito-administrativo" replace />} />
-        <Route path="/servicos/direito-do-consumidor" element={<ConsumerLaw />} />
-        <Route path="/servicos/direito-constitucional" element={<ConstitutionalLaw />} />
-        <Route path="/servicos/direito-institucional" element={<Navigate to="/servicos/direito-constitucional" replace />} />
-        <Route path="/servicos/direito-publico" element={<Navigate to="/servicos/direito-constitucional" replace />} />
-        <Route path="/servicos/consultoria" element={<Consulting />} />
-        <Route path="/contato" element={<Contact />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:slug" element={<BlogPost />} />
-        <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
-        <Route path="/termos-de-uso" element={<TermsOfUse />} />
-        <Route path="/politica-de-cookies" element={<CookiesPolicy />} />
-        <Route path="/components" element={<ComponentLibrary />} />
-      </Routes>
-      <CookieBanner />
-    </BrowserRouter>
-  );
-}
+export default routes;
